@@ -1,10 +1,3 @@
-## Hi there 👋
-
-<!--
-**unikill066/unikill066** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
 # 💫 About Me:
 🔭 I’m currently working as a Data Science and Neuroinformatics Intern at the Center for Advanced Pain Studies (CAPS), where I dive into projects on machine learning models and bioinformatics pipelines for genomic analysis. 🌐 My projects span developing pipelines for spatial transcriptomics, creating object detection models for neuron identification, integrating omics and proteomics data, and automating workflows with Docker and NextFlow.<br><br>🔬 My research interests include exploring non-coding RNA datasets to uncover their roles in neuropathy and chronic pain pathways. 🧬 I’m also working with tools like AlphaFold, ESMFold, and RosettaFold to deepen our understanding of protein-folding in these processes.<br><br>👥 I’m always open to collaborations in bioinformatics, particularly on projects involving machine learning! I’m also eager to help automate sequencing data pipelines for single-cell data (CellRanger), spatial transcriptomics (SpaceRanger), Bulk-RNA-seq, ATAC-seq, and XeniumRanger, aiming for minimal manual intervention.<br><br>📘 Currently, I’m expanding my expertise in proteomics and systems neuroscience while pursuing a Master of Science in Business Analytics and Artificial Intelligence.<br><br>🌱 My journey into Neuroinformatics began as a Student Assistant with Dr. Tavares, where I developed a deep curiosity that led me to join CAPS in February 2023. I transitioned into an intern role, contributing to neuron detection and data pipeline projects.<br><br>🌄 Outside the lab, I’m always up for adventure—be it trekking, cycling new terrains, running, or camping. One memorable challenge: I once cycled 50 miles through mountainous terrain, reveling in every mile! This spirit of exploration fuels everything I do, in the lab and beyond.
 
