@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <title>Nikhil Nageshwar Inturi - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-F0QY6Y+PjIxOQ77RLJ33JZxVLHfrL0I4hIw2LU5BT4D1b3O/YRMbF6BiQdKk3xHy" crossorigin="anonymous">
+  <link rel="stylesheet" href="skills.css">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <div id="particles-js" class="fixed inset-0 z-0"></div>
+  <header class="bg-white shadow fixed w-full z-10">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold id=animated-name class=text-2xl">
+        <a href="index.html" class="text-gray-800 hover:text-blue-600">Nikhil Nageshwar Inturi</a>
+      </h1>
+      
+      <nav nav class="flex items-center space-x-4">
+        <a href="#experience" class="text-gray-600 hover:text-blue-600">Experience</a>
+        <a href="#publications" class="text-gray-600 hover:text-blue-600">Publications</a>
+        <a href="#education" class="text-gray-600 hover:text-blue-600">Education</a>
+        <a href="#skills" class="text-gray-600 hover:text-blue-600">Skills</a>
+        <a href="#certifications" class="text-gray-600 hover:text-blue-600">Certifications</a>
+        <a href="contact-info.html" class="text-gray-600 hover:text-blue-600">Contact</a>
+        <div x-data="{ open: false }" class="relative inline-block">
+          <button @click="open = !open" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+              Misc
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+          </button>
+          <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 z-50">
+              <a href="internship.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">CAPS - Internship Experience</a>
+              <a href="quite_canopy.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">Nature's Nexus</a>
+          </div>
+        </div>
+        <a href="https://github.com/unikill066" style="color: black; text-decoration: none;" class="text-gray-600 hover:text-gray-800 ml-2" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37258 0 0 5.37258 0 12C0 17.3023 3.43839 21.8005 8.20506 23.3853C8.80506 23.4973 9.0253 23.1531 9.0253 22.8628V20.6141C5.67264 21.2953 4.96883 19.0094 4.96883 19.0094C4.42202 17.5816 3.6338 17.2082 3.6338 17.2082C2.54667 16.498 3.71395 16.515 3.71395 16.515C4.91449 16.6059 5.55017 17.7625 5.55017 17.7625C6.6253 19.6227 8.42809 19.1102 9.13973 18.8383C9.24977 18.0547 9.56429 17.5477 9.9164 17.2578C7.23929 16.9473 4.39759 15.9273 4.39759 11.3619C4.39759 10.0758 4.85447 9.04682 5.60598 8.25348C5.48612 7.95879 5.09136 6.69347 5.72212 5.05685C5.72212 5.05685 6.71673 4.72503 9.0253 6.3359C9.96801 6.07871 10.9762 5.94669 11.9844 5.94118C12.9926 5.94669 14.0008 6.07871 14.9435 6.3359C17.2521 4.72503 18.2467 5.05685 18.2467 5.05685C18.8775 6.69347 18.4827 7.95879 18.3629 8.25348C19.1144 9.04682 19.5713 10.0758 19.5713 11.3619C19.5713 15.9373 16.7296 16.9443 14.0525 17.2518C14.4917 17.6327 14.8775 18.3429 14.8775 19.4702V22.8628C14.8775 23.1563 15.0959 23.5025 15.7015 23.3853C20.4682 21.8005 23.9066 17.3023 23.9066 12C23.9066 5.37258 18.5341 0 12 0Z" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/nikhilinturi/" style="color: #0A66C2; text-decoration: none;" class="text-gray-600 hover:text-gray-800" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22.23 0H1.77C.792 0 0 .774 0 1.727V22.27C0 23.226.792 24 1.77 24H22.23C23.207 24 24 23.226 24 22.273V1.727C24 .774 23.207 0 22.23 0ZM7.059 20.452H3.573V9H7.059V20.452ZM5.316 7.466C4.151 7.466 3.209 6.512 3.209 5.34C3.209 4.167 4.151 3.214 5.316 3.214C6.477 3.214 7.42 4.167 7.42 5.34C7.42 6.512 6.477 7.466 5.316 7.466ZM20.452 20.452H16.965V14.826C16.965 13.503 16.939 11.814 15.115 11.814C13.267 11.814 13.004 13.238 13.004 14.733V20.452H9.518V9H12.873V10.513H12.921C13.369 9.674 14.465 8.783 16.001 8.783C19.416 8.783 20.452 10.958 20.452 14.104V20.452Z"/>
+          </svg>
+        </a>
+
+        <button id="theme-toggle" class="" top-4 right-4 p-2 bg-gray-300 rounded">🌞</button>
+      </nav>
+      
+    </div>
+  </header>
+
+
+<main class="container mx-auto px-4 py-24">
+  <!-- About Information -->
+  <section id="about" class="mb-12">
+    <div class="bg-white p-6 rounded shadow">
+        <h2 class="text-3xl font-semibold mb-4">About 📝</h2>
+        <hr class="border-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 my-6"> 
+        <!-- <hr style="border: 0; height: 2px; background: linear-gradient(to right, #f0f0f0, #2c3e50, #f0f0f0); margin-top: 20px; margin-bottom: 20px;"> -->
+
+        <div class="flex items-center">
+            <img src="images/nikk.JPG" alt="Nikhil Nageshwar Inturi" class="w-64 h-84 rounded-full border-2 border-gray-800 mr-8">
+            <!-- <img src="images/nik.jpg" alt="Nikhil Nageshwar Inturi" class="w-64 h-84 rounded-lg border-4 border-gray-200 shadow-xl transform hover:scale-105 transition-transform duration-300"> Enhanced image styling -->
+           
+            <div>
+              <h1 class="text-4xl text-gray-600 mt-5 mb-5">Nikhil Nageshwar Inturi</h1>
+              <h2 class="text-xl text-gray-600 mt-5 mb-5">Data Scientist and Neuroinformatics Intern at the Center for Advanced Pain Studies | Machine Learning in Biopharma R&D and Drug Discovery</h2>
+                <div class="flex items-center mt-2">
+                  <a href="https://github.com/unikill066" style="color: black; text-decoration: none;" class="text-gray-600 hover:text-gray-800 mr-4" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0C5.37258 0 0 5.37258 0 12C0 17.3023 3.43839 21.8005 8.20506 23.3853C8.80506 23.4973 9.0253 23.1531 9.0253 22.8628V20.6141C5.67264 21.2953 4.96883 19.0094 4.96883 19.0094C4.42202 17.5816 3.6338 17.2082 3.6338 17.2082C2.54667 16.498 3.71395 16.515 3.71395 16.515C4.91449 16.6059 5.55017 17.7625 5.55017 17.7625C6.6253 19.6227 8.42809 19.1102 9.13973 18.8383C9.24977 18.0547 9.56429 17.5477 9.9164 17.2578C7.23929 16.9473 4.39759 15.9273 4.39759 11.3619C4.39759 10.0758 4.85447 9.04682 5.60598 8.25348C5.48612 7.95879 5.09136 6.69347 5.72212 5.05685C5.72212 5.05685 6.71673 4.72503 9.0253 6.3359C9.96801 6.07871 10.9762 5.94669 11.9844 5.94118C12.9926 5.94669 14.0008 6.07871 14.9435 6.3359C17.2521 4.72503 18.2467 5.05685 18.2467 5.05685C18.8775 6.69347 18.4827 7.95879 18.3629 8.25348C19.1144 9.04682 19.5713 10.0758 19.5713 11.3619C19.5713 15.9373 16.7296 16.9443 14.0525 17.2518C14.4917 17.6327 14.8775 18.3429 14.8775 19.4702V22.8628C14.8775 23.1563 15.0959 23.5025 15.7015 23.3853C20.4682 21.8005 23.9066 17.3023 23.9066 12C23.9066 5.37258 18.5341 0 12 0Z" />
+                      </svg>
+                  </a>
+                  <a href="https://www.linkedin.com/in/nikhilinturi/" style="color: #0A66C2; text-decoration: none;" class="text-gray-600 hover:text-gray-800" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M22.23 0H1.77C.792 0 0 .774 0 1.727V22.27C0 23.226.792 24 1.77 24H22.23C23.207 24 24 23.226 24 22.273V1.727C24 .774 23.207 0 22.23 0ZM7.059 20.452H3.573V9H7.059V20.452ZM5.316 7.466C4.151 7.466 3.209 6.512 3.209 5.34C3.209 4.167 4.151 3.214 5.316 3.214C6.477 3.214 7.42 4.167 7.42 5.34C7.42 6.512 6.477 7.466 5.316 7.466ZM20.452 20.452H16.965V14.826C16.965 13.503 16.939 11.814 15.115 11.814C13.267 11.814 13.004 13.238 13.004 14.733V20.452H9.518V9H12.873V10.513H12.921C13.369 9.674 14.465 8.783 16.001 8.783C19.416 8.783 20.452 10.958 20.452 14.104V20.452Z"/>
+                      </svg>
+                  </a>
+              </div>
+            </div>
+
+        </div>
+       
+        <p class="text-lg leading-relaxed group relative hover:text-gray-900 mt-6 mb-6">
+          🚀 Since childhood, I have been deeply fascinated by automobiles 🚗 and computers 💻. I vividly recall my first attempts at making a Java program print <strong>"Hello World!"</strong> Now, it feels almost magical to command a computer to perform tasks with just a few lines of code.
+        </p>
+       
+        <p class="text-lg leading-relaxed group relative hover:text-gray-900 mt-6 mb-6">
+          🎓 I earned my bachelor's degree at <strong class="group-hover:text-blue-500">M.S. Ramaiah Institute of Technology</strong> in Bangalore, India. During my undergraduate studies, I developed a keen interest in material science, which led me to collaborate with <em class="group-hover:text-red-500">Dr. Vishwanath Koti</em> to investigate the electrical ⚡ and thermal 🔥 conductivity of copper and multiwall carbon nanotube composites during my junior and senior years.
+        </p>
+       
+        <p class="text-lg leading-relaxed group relative hover:text-gray-900 mt-6 mb-6">
+          📚 Currently, I'm pursuing my master's in <strong class="group-hover:text-blue-500">Business Analytics and Data Science</strong> at the <a href="https://www.utdallas.edu" style="color: blue; text-decoration: underline;">University of Texas at Dallas (UTD)</a> while interning in Data Science and Neuroinformatics at UTD's <a href="https://paincenter.utdallas.edu/" style="color: blue; text-decoration: underline;">Center for Advanced Pain Studies (CAPS)</a> 🧠. At CAPS, I apply machine learning and bioinformatics 🧬 to automate various genomic analyses, significantly reducing processing times. I'm also working on a Neuron Detection project to further streamline the 10X-Visium pipeline.
+        </p>
+       
+        <p class="text-lg leading-relaxed group relative hover:text-gray-900 mt-6 mb-6">
+          💼 I've had the privilege of working with several distinguished researchers, including <em class="group-hover:text-red-500">Dr. Theodore J. Price</em>, <em class="group-hover:text-red-500">Dr. Diana F. Tavares</em>, and <em class="group-hover:text-red-500">Dr. Eric Christopher Meyers</em> at UTD, as well as collaborating with labs across the globe 🌍. Before coming to the U.S., I spent 4.5 years in India's tech industry. At <strong class="group-hover:text-blue-500">Infosys Ltd.</strong>, I worked in consulting and development, notably for <strong class="group-hover:text-blue-500">BMW</strong> and the Infosys Research Unit. There, I honed my data science skills, developing enterprise applications and algorithms, and spearheading containerization efforts that dramatically improved deployment efficiency. Later, at <strong class="group-hover:text-blue-500">Aganitha</strong>, I worked as a Full-Stack Data Scientist on <em>AAV Capsid Engineering</em> 🧬, setting up the midstream and downstream analysis. I developed clustering models aimed at identifying optimal golden templates and predicting effective 7-mer sequences for blood-brain barrier transduction 🧠.
+        </p>
+       
+        <p class="text-lg leading-relaxed group relative hover:text-gray-900 mt-6 mb-6">
+          ❤️ I carry the same passion as when I was a kid—to learn and contribute in the field of data science and bioinformatics. There's always more to learn 📖, more challenges to overcome 🏁, and more to create ✨.
+        </p>
+
+        <!-- adding JOP -->
+        <!-- <section id="featured-paper" class="p-3"></section>
+          <h3 class="text-2xl font-semibold mb-4 text-left">Featured Research 📖</h3>
+          <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="w-full md:w-3/4">
+              <strong class="text-xl block">Persistent changes in nociceptor translatomes govern hyperalgesic priming in mouse models</strong>
+              <em class="text-gray-600">Published: 8, August 2024</em>
+              <p class="mt-2 text-gray-700">
+                <span class="underline">TLDR</span>: Altered nociceptor translatomes are causative in producing hyperalgesic priming, and a functional role for these genes is confirmed, wherein a GPR88 agonist causes pain only in primed mice and established hyperalgesic priming is reversed by Meteorin.
+              </p>
+              <div class="mt-4 space-x-2">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/39149295/" target="_blank" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+                  Read More
+                </a>
+                <a href="misc/persistent_changes_in_the_dorsal_root_ganglion.811.pdf" download class="px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600">
+                  Download Paper
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/4 mt-4 md:mt-0 flex justify-center">
+              <img src="images/research-paper-thumbnail.jpg" alt="Paper Thumbnail" class="w-48 h-48 object-cover rounded-lg shadow-lg">
+            </div>
+          </div>
+        </section> -->
+
+    </div>
+  </section>
+
+
+  <!-- Experience -->
+  <section id="experience" class="mb-12">
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-3xl font-semibold mb-6">Work Experience 👨🏻‍💻</h2>
+      <!-- Position 1 -->
+      <div x-data="{ open: false }" class="mb-6">
+        <button @click="open = !open" class="w-full text-left">
+          <div class="flex justify-between items-center">
+            <h3 class="text-xl font-semibold">Data Science and Neuroinformatics Intern</h3>
+            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+            <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+            </svg>
+          </div>
+        </button>
+        <p class="text-gray-600">
+          <a href="https://paincenter.utdallas.edu/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Center for Advanced Pain Studies, The University of Texas at Dallas</a><br>
+          <em>Feb 2022 – Present</em>
+        </p>
+
+        <div x-show="open" class="mt-2">
+          <p>
+            As a Data Science and Neuroinformatics Intern at
+            <a href="https://paincenter.utdallas.edu/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Center for Advanced Pain Studies</a>
+            (<a href="https://paincenter.utdallas.edu/about/directors-welcome/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Dr. Price</a>, <a href="https://labs.utdallas.edu/axonlab/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Dr. Tavares</a>, and <a href="https://be.utdallas.edu/people/faculty/eric-meyers/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Dr. Meyers</a>), I had the opportunity to work on several pipelines and interact with some amazing researchers who are exemplars in the pain field. Here is a peek into my work here as an Intern here at Center for Advance Pain Studies(CAPS):
+          </p>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>Utilized advanced <b>image classification and segmentation</b> techniques to enhance <b>neuron detection</b> in human, mouse, and baboon neuronal images as part of the Neuron Detection project. This approach contributed to a 15% improvement in barcode detection accuracy and facilitated the generation of precise neuronal barcode files automatically for the Visium workflow.</li>
+            <li>Automated the <a href="https://github.com/utdal/Visium-NextFlow-Pipeline" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Visium(spatial transcriptomics)</a> analysis pipeline, which involves several steps using bash, Python, and R (Seurat analysis) scripts, as well as NextFlow/Cromwell scripts. My focus was on optimizing spatial data analysis for Visium by integrating neuron detection models through extensive cross-validation, hyper-parameter tuning, and albumentations.</li>
+            <li>Developed and optimized scripts for the comprehensive analysis of diverse biological datasets, including <b>Single-cell,<a href="https://github.com/utdal/visium10x-spatial-transcriptomics-pipeline" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline"> Visium (spatial)</a>, <a href="https://github.com/utdal/ATACSeq-NextFlow-Pipeline" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline"> ATAC-sequencing</a>, and <a href="https://github.com/utdal/Bulk-RNA-Seq-Nextflow-Pipeline" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline"> Bulk RNA-sequencing</a></b> using <b>Nextflow</b> and <b>Docker</b>. This enhancement led to a 60% increase in analytical efficiency, significantly accelerating the identification of differentially expressed genes and biomarkers.</li>
+            <li>Collaborated with cross-functional teams from multiple research labs, such as Arkady's Lab at McGill, to streamline computational pipelines using workflows and containers for improved efficiency.</li>
+            <li>Explored the analysis of non-coding RNA datasets, particularly microRNAs, to understand their role in regulating gene expression and their implications in neuropathy and chronic pain pathways.</li>
+          </ol>
+
+          <div class="flex space-x-4 mt-4">
+            <a href="internship.html" class="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Spring 2024
+            </a>
+          
+            <a href="https://www.linkedin.com/pulse/spring-2024-internship-experience-center-advanced-pain-inturi-qeksc/?trackingId=MJh9lJeUSxykCAG%2BTlN%2BBQ%3D%3D" class="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Spring 2024 +
+            </a>
+          
+            <a href="https://www.linkedin.com/pulse/fall-2024-internship-center-advanced-pain-studiescaps-inturi-3sp2c/?trackingId=3iGcXeXGy0L0sa%2FWMrLhPA%3D%3D" class="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Fall 2024
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Position 2 -->
+      <div x-data="{ open: false }" class="mb-6">
+        <button @click="open = !open" class="w-full text-left">
+          <div class="flex justify-between items-center">
+            <h3 class="text-xl font-semibold">Full-stack Data Scientist</h3>
+            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+            <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+            </svg>
+          </div>
+        </button>
+        <p class="text-gray-600">
+          <a href="https://www.aganitha.ai" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Aganitha Cognitive Solutions, Hyderabad, India</a><br>
+          <em>Jun 2022 – Nov 2023</em>
+        </p>
+        <div x-show="open" class="mt-2">
+          <ol class="list-decimal pl-5 space-y-2">
+            I predominantly worked on *in Silico* solutions related to Gene Therapy, Drug Discovery, etc. for industry-leading clients in Health Care and Biopharma. The work here at Aganitha requires a strong understanding of molecular bioinformatics, omics, and genomics. It’s quite fascinating to learn about the human body and its metabolism, and I am looking forward to learning more.
+            <li>Developed and implemented advanced algorithms for the <a href="https://github.com/unikill066/BLAST-Search" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">AutoBLAST</a>, a genome browser, doubling efficiency compared to the <b>Basic Local Alignment Search Tool</b>.</li>
+            <li>Designed and executed <b>clustering models for the AAV Capsid Engineering Project to identify the golden templates</b>, significantly reducing the number of required in-vivo experiments by 99.96%, which led to substantial cost savings.</li>
+            <li>Developed interactive <b>ipython widgets and panel dashboards</b> for the <b>Midstream and Downstream Analysis</b> components of AAV Capsid Engineering, enhancing user engagement and data visualization capabilities.</li>
+            <li>Revamped <b>Splice-AI</b> algorithms to accurately detect and <b>analyze novel splice junctions in humans and rodents</b>, which resulted in a 20% increase in overall testing efficiency.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Position 3 -->
+      <div x-data="{ open: false }">
+        <button @click="open = !open" class="w-full text-left">
+          <div class="flex justify-between items-center">
+            <h3 class="text-xl font-semibold">Technology Analyst</h3>
+            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+            <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+            </svg>
+          </div>
+        </button>
+        <p class="text-gray-600">
+          <a href="https://www.infosys.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Infosys Ltd, Hyderabad, India</a><br>
+          <em>Sep 2018 – Jun 2022</em>
+        </p>
+
+        <div x-show="open" class="mt-2">
+          <ol class="list-decimal pl-5 space-y-2">
+            During my tenure at Infosys and its research unit, Infosys ICETS, I undertook various responsibilities as mentioned below:
+            <li>Developed and implemented machine learning algorithms using a variety of packages such as <b>scikit-learn, LGBoost, CatBoost, H2O</b>, and <b>keras</b> to enhance the functionality of the <b>Infosys Data Science and Machine Learning Platform (IDSMLP)</b>, significantly expanding the scope of the tool.</li>
+            <li>Integrated advanced data visualization techniques into the IDSMLP tool interface by incorporating <b>univariate, bivariate, and multivariate interactive charts</b> using <b>Bokeh</b> and <b>Plotly</b>. Additionally, I established <b>load balancing with an Nginx server</b> to optimize user interactions and enhance the understanding of complex data patterns through interactive charts.</li>
+            <li>Streamlined deployment processes by <b>Dockerizing</b> all applications on the ICETS-Data Science platform, which reduced deployment times by 75% and significantly increased operational efficiency.</li>
+            <li>Developed and implemented a total of 40 database connectors for ICETS-Infosys, utilizing both <b>SQL and NoSQL</b> databases with Python, contributing to the development of valuable <b>internal intellectual property for ICETS(Infosys Center for Emerging Technology Solutions)</b>.</li>
+            </li>Created a user-friendly interface for the CFIN tool using Python, which streamlined communication and collaboration with the Infosys SAP Team.</li>
+            <li>Managed and maintained 55 repositories within the Enterprise Content Management software Documentum across Production, Integration, and Test environments; automated DAR/JAR deployments, enhancing deployment efficiency by a factor of 16.</li>
+          </ol>
+          <div class="mt-4 flex flex-col items-center">
+            <img src="images/insta_award.png" alt="Insta Award" class="w-96 h-auto object-contain">
+            <p class="mt-2 text-gray-700 text-sm text-center">Insta Award for Excellence</p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <!-- Publications -->
+  <section id="publications" class="mb-12">
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-3xl font-semibold mb-6">Publications 📚</h2>
+      <ul class="space-y-6">
+
+        <li x-data="{ open: false }">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Molecular architecture of human dermal sleeping nociceptors</strong><br>
+                <em>20, December 2024</em>
+                <p><span class="underline">Authors</span>: Jannis Körner, Derek Howard, Hans Jürgen Solinski, Marisol Mancilla Moreno, Natja Haag, Andrea Fiebig, Shamsuddin A. Bhuiyan, Idil Toklucu, Raya Bott, Ishwarya Sankaranarayanan, Diana Tavares-Ferreira, Stephanie Shiers, <b>Nikhil N. Inturi</b>, Anna Maxion, Lisa Ernst, Lorenzo Bonaguro, Jonas Schulte-Schrepping, Marc D. Beyer, Thomas Stiehl, William Renthal, Ingo Kurth, Theodore Price, Martin Schmelz, Barbara Namer, Shreejoy Tripathy, Angelika Lampert</p>
+              </div>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-2">
+            
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Human dermal sleeping nociceptors display ongoing activity in neuropathic pain, affecting 10% of the population. Despite advances in rodents, a molecular marker for these mechano-insensitive C-fibers (CMis) in human skin remains elusive, preventing targeted therapy. In this translational Patch-seq study, we combine single-cell transcriptomics following electrophysiological characterization with single-nucleus and spatial transcriptomics from pigs and humans. We functionally identified CMis in pig sensory neurons with patch-clamp using adapted protocols from human microneurography. We identified oncostatin-M-receptor (OSMR) and somatostatin (SST) as marker genes for CMis. Following dermal injection in healthy human volunteers, oncostatin-M, the ligand of OSMR, exclusively modulates CMis. We identified the entire molecular architecture of human dermal sleeping nociceptors, providing new therapeutic targets and the basis for a mechanistic understanding of neuropathic pain.
+            </p>
+            <a href="biorxiv.org/content/10.1101/2024.12.20.629638v1" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+          </div>
+        </li>
+
+        <li x-data="{ open: false }">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Translational control in the spinal cord regulates gene expression and pain hypersensitivity in the chronic phase of neuropathic pain</strong><br>
+                <em>18, September 2024</em>
+                <p><span class="underline">Authors</span>: Kevin C Lister, Calvin Wong, Sonali Uttam, Marc Parisien, Patricia Stecum, Nicole Brown, Weihua Cai, Mehdi Hooshmandi, Ning Gu, Mehdi Amiri, Francis Beaudry, Seyed Mehdi Jafarnejad, Diana Tavares-Ferreira, <b>Nikhil Nageshwar Inturi</b>, Khadijah Mazhar, Hien T Zhao, Bethany Fitzsimmons, Christos G Gkogkas, Nahum Sonenberg, Theodore J Price, Luda Diatchenko, Yaser Atlasi, Jeffrey S Mogil, Arkady Khoutorsky</p>
+              </div>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-2">
+            
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Sensitization of spinal nociceptive circuits plays a crucial role in neuropathic pain. This sensitization depends on new gene expression that is primarily regulated via transcriptional and translational control mechanisms. The relative roles of these mechanisms in regulating gene expression in the clinically relevant chronic phase of neuropathic pain are not well understood. Here, we show that changes in gene expression in the spinal cord during the chronic phase of neuropathic pain are substantially regulated at the translational level. Downregulating spinal translation at the chronic phase alleviated pain hypersensitivity. Cell-type-specific profiling revealed that spinal inhibitory neurons exhibited greater changes in translation after peripheral nerve injury compared to excitatory neurons. Notably, increasing translation selectively in all inhibitory neurons or parvalbumin-positive (PV+) interneurons, but not excitatory neurons, promoted mechanical pain hypersensitivity. Furthermore, increasing translation in PV+ neurons decreased their intrinsic excitability and spiking activity, whereas reducing translation in spinal PV+ neurons prevented the nerve injury-induced decrease in excitability. Thus, translational control mechanisms in the spinal cord, particularly in inhibitory neurons, play a role in mediating neuropathic pain hypersensitivity.
+            </p>
+            <a href="https://elifesciences.org/reviewed-preprints/100451" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+          </div>
+        </li>
+
+        <li x-data="{ open: false }">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Deciphering the molecular landscape of human peripheral nerves: implications for diabetic peripheral neuropathy</strong><br>
+                <em>16, July 2024</em>
+                <p><span class="underline">Authors</span>: Diana Tavares Ferreira, Breanna Q Shen, Juliet M Mwirigi, Stephanie Shiers, Ishwarya Sankaranarayanan, Miriam Kotamarti, <b>Nikhil N Inturi</b>, Khadijah Mazhar, Eroboghene E Ubogu, Geneva Thomas, Trapper Lalli, Dane Wukich, Theodore J Price</p>
+              </div>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-2">
+            
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Diabetic peripheral neuropathy (DPN) is a prevalent complication of diabetes mellitus that is caused by metabolic toxicity to peripheral axons. We aimed to gain deep mechanistic insight into the disease process using bulk and spatial RNA sequencing on tibial and sural nerves recovered from lower leg amputations in a mostly diabetic population. First, our approach comparing mixed sensory and motor tibial and purely sensory sural nerves shows key pathway differences in affected nerves, with distinct immunological features observed in sural nerves. Second, spatial transcriptomics analysis of sural nerves reveals substantial shifts in endothelial and immune cell types associated with severe axonal loss. We also find clear evidence of neuronal gene transcript changes, like PRPH, in nerves with axonal loss suggesting perturbed RNA transport into distal sensory axons. This motivated further investigation into neuronal mRNA localization in peripheral nerve axons generating clear evidence of robust localization of mRNAs such as SCN9A and TRPV1 in human sensory axons. Our work gives new insight into the altered cellular and transcriptomic profiles in human nerves in DPN and highlights the importance of sensory axon mRNA transport as an unappreciated potential contributor to peripheral nerve degeneration.
+            </p>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11195245/" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+          </div>
+        </li>
+
+        <li x-data="{ open: false }">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Epigenomic landscape of the human dorsal root ganglion: sex differences and transcriptional regulation of nociceptive genes</strong><br>
+                <em>10, July 2024</em>
+                <p><span class="underline">Authors</span>: Úrzula Franco-Enzástiga, <b>Nikhil N Inturi</b>, Keerthana Natarajan, Juliet M Mwirigi, Khadija Mazhar, Johannes C M Schlachetzki, Mark Schumacher, Theodore J Price</p>
+              </div>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-2">
+            
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Gene expression is influenced by chromatin architecture via controlled access of regulatory factors to DNA. To better understand gene regulation in the human dorsal root ganglion (hDRG) we used bulk and spatial transposase-accessible chromatin technology followed by sequencing (ATAC-seq). Using bulk ATAC-seq, we detected that in females diverse differentially accessible chromatin regions (DARs) mapped to the X chromosome and in males to autosomal genes. EGR1/3 and SP1/4 transcription factor binding motifs were abundant within DARs in females, and JUN, FOS and other AP-1 factors in males. To dissect the open chromatin profile in hDRG neurons, we used spatial ATAC-seq. The neuron cluster showed higher chromatin accessibility in GABAergic, glutamatergic, and interferon-related genes in females, and in Ca2+- signaling-related genes in males. Sex differences in transcription factor binding sites in neuron-proximal barcodes were consistent with the trends observed in bulk ATAC-seq data. We validated that EGR1 expression is biased to female hDRG compared to male. Strikingly, XIST, the long-noncoding RNA responsible for X inactivation, hybridization signal was found to be highly dispersed in the female neuronal but not non-neuronal nuclei suggesting weak X inactivation in female hDRG neurons. Our findings point to baseline epigenomic sex differences in the hDRG that likely underlie divergent transcriptional responses that determine <a href="https://sciencecast.org/casts/q7yc0okev3s2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">mechanistic sex differences</a> in pain.
+            </p>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/38586055/" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+          </div>
+        </li>
+        
+        <li x-data="{ open: false }">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Exploring the Single-Cell Transcriptome Landscape of the Human Dorsal Root Ganglion in Diabetic Peripheral Neuropathy</strong><br>
+                <em>26, April 2024</em>
+                <p><span class="underline">Authors</span>: Ishwarya Sankaranarayanan, Juliet M Mwirigi, <b>Nikhil Nageshwar Inturi</b>, Diana Tavares-Ferreira, Theodore J Price</p>
+              </div>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-2">
+            
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Diabetic Peripheral Neuropathy (DPN) stands out as a very common and clinically consequential complication of diabetes. DPN is characterized by nerve conduction impairment, dieback of nerve endings from the skin, spontaneous pain, and numbness in extremities. In this study, we conducted single-nucleus RNA sequencing on human dorsal root ganglion (DRG) tissues recovered from organ donors with a documented history of diabetes and neuropathic pain. Employing 10x Genomics technology, we performed single-nucleus RNA sequencing on eight human DRG samples each from individuals with DPN or healthy donors. Our primary objectives encompassed elucidating distinct populations of neurons and comprehending their transcriptomic variations between healthy and DPN DRGs. Additionally, we sought to characterize the diversity of transcriptomic changes in non-neuronal cells and explore their neuro-immune interactions in DPN. Our analysis revealed significant alterations in non-neuronal cell populations, including T cells, macrophages, and adipocytes within human DRG of DPN donors. Our work presents a comprehensive single-cell transcriptomic landscape of human DRGs in DPN donors, providing insights into molecular profile changes associated with DPN. The interactions between neuronal and non-neuronal cells could offer valuable insights into the underlying mechanisms of this condition, assisting in the development of novel therapeutics to alleviate DPN. Funded by National Institute of Health (U19 NS130608).
+            </p>
+            
+            <a href="https://www.jpain.org/article/S1526-5900(24)00135-4/abstract" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+          </div>
+        </li>
+
+        <!-- <li x-data="{ open: false }">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Persistent changes in nociceptor translatomes govern hyperalgesic priming in mouse models</strong><br>
+                <em>8, August 2024</em>
+                <p><span class="underline">Authors</span>: Ishwarya Sankaranarayanan, Moeno Kume, Ayaan Mohammed, Juliet M. Mwirigi, <b>Nikhil Nageshwar Inturi</b>, Gordon Munro, K. A. Petersen, Diana Tavares-Ferreira, Theodore J. Price</p>
+              </div>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+            <p class="mt-2 text-gray-600">
+              <span class="underline">TLDR</span>: Altered nociceptor translatomes are causative in producing hyperalgesic priming, and a functional role for these genes is confirmed, wherein a GPR88 agonist causes pain only in primed mice and established hyperalgesic priming is reversed by Meteorin.
+            </p>
+          </button>
+          <div x-show="open" class="mt-2">
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Hyperalgesic priming is a model system that has been widely used to understand plasticity in painful stimulus-detecting sensory neurons, called nociceptors. A key feature of this model system is that following priming, stimuli that do not normally cause hyperalgesia now readily provoke this state. We hypothesized that hyperalgesic priming occurs due to reorganization of translation of mRNA in nociceptors. To test this hypothesis, we used paclitaxel treatment as the priming stimulus and translating ribosome affinity purification (TRAP) to measure persistent changes in mRNA translation in Nav1.8+ nociceptors. TRAP sequencing revealed 161 genes with persistently altered mRNA translation in the primed state. We identified Gpr88 as upregulated and Metrn as downregulated. We confirmed a functional role for these genes, wherein a GPR88 agonist causes pain only in primed mice and established hyperalgesic priming is reversed by Meteorin. Our work demonstrates that altered nociceptor translatomes are causative in producing hyperalgesic priming.
+            </p>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/39149295/" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+            <a href="https://journals.lww.com/pain/fulltext/9900/persistent_changes_in_the_dorsal_root_ganglion.811.aspx  " target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"></a>
+              The Journal of the International Assocation for the Study of Pain
+            </a>
+          </div>
+        </li> -->
+
+        <li x-data="{ open: false }">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Persistent changes in nociceptor translatomes govern hyperalgesic priming in mouse models</strong><br>
+                <em>8, August 2024</em>
+                <p><span class="underline">Authors</span>: Ishwarya Sankaranarayanan, Moeno Kume, Ayaan Mohammed, Juliet M. Mwirigi, <b>Nikhil Nageshwar Inturi</b>, Gordon Munro, K. A. Petersen, Diana Tavares-Ferreira, Theodore J. Price</p>
+              </div>
+              <!-- Dropdown Arrow Icons -->
+              <svg x-show="!open" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+            <p class="mt-2 text-gray-600">
+              <span class="underline">TLDR</span>: Altered nociceptor translatomes are causative in producing hyperalgesic priming, and a functional role for these genes is confirmed, wherein a GPR88 agonist causes pain only in primed mice and established hyperalgesic priming is reversed by Meteorin.
+            </p>
+          </button>
+          <div x-show="open" x-cloak class="mt-2">
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Hyperalgesic priming is a model system that has been widely used to understand plasticity in painful stimulus-detecting sensory neurons, called nociceptors. A key feature of this model system is that following priming, stimuli that do not normally cause hyperalgesia now readily provoke this state. We hypothesized that hyperalgesic priming occurs due to reorganization of translation of mRNA in nociceptors. To test this hypothesis, we used paclitaxel treatment as the priming stimulus and translating ribosome affinity purification (TRAP) to measure persistent changes in mRNA translation in Nav1.8+ nociceptors. TRAP sequencing revealed 161 genes with persistently altered mRNA translation in the primed state. We identified Gpr88 as upregulated and Metrn as downregulated. We confirmed a functional role for these genes, wherein a GPR88 agonist causes pain only in primed mice and established hyperalgesic priming is reversed by Meteorin. Our work demonstrates that altered nociceptor translatomes are causative in producing hyperalgesic priming.
+            </p>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/39149295/" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+            <a href="https://journals.lww.com/pain/fulltext/9900/persistent_changes_in_the_dorsal_root_ganglion.811.aspx" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              The Journal of the International Association for the Study of Pain
+            </a>
+            <a href="misc/persistent_changes_in_the_dorsal_root_ganglion.811.pdf" download class="mt-4 inline-block px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600">
+              Download Paper
+            </a>
+            
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+
+  <!-- Education -->
+  <section id="education" class="mb-12">
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-3xl font-semibold mb-6">Education 🎓</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-semibold">
+            <a href="https://www.utdallas.edu/fact-sheets/jsom/ms-business-analytics-and-artificial-intelligence/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+              The University of Texas at Dallas
+            </a>
+          </h3>
+          <p class="text-gray-600">Master’s in Business Analytics and Artificial Intelligence</p>
+          <p class="text-gray-500"><em>Jan 2023 - Present</em></p>
+          <div class="flex justify-start gap-4 mt-4">
+            <a href="javascript:void(0);" onclick="openModal('images/cert_appr.jpeg')">
+              <img src="images/cert_appr.jpeg" alt="Image 1 description" class="w-48 h-32 object-cover border-2 border-gray-350 rounded-lg">
+            </a>
+            <a href="javascript:void(0);" onclick="openModal('images/high_dist.png')">
+              <img src="images/high_dist.png" alt="Image 2 description" class="w-48 h-32 object-cover border-2 border-gray-350 rounded-lg">
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold">
+            <a href="https://bootcamp-sl.discover.online.purdue.edu/ai-machine-learning-certification-course?_ga=2.248470919.1816546931.1706543402-1365430790.1706303985" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+              Purdue University
+            </a>
+          </h3>
+          <p class="text-gray-600">Post Graduate Program in AI and Machine Learning</p>
+          <p class="text-gray-500"><em>Oct 2020 - Nov 2021</em></p>
+          <div class="flex justify-start gap-4 mt-4">
+            <a href="javascript:void(0);" onclick="openModal('images/purdue_gl.png')">
+              <img src="images/purdue_gl.png" alt="Image 1 description" class="w-48 h-32 object-cover border-2 border-gray-350 rounded-lg">
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold">
+            <a href="https://www.msrit.edu/department/me.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+              Ramaiah Institute of Technology
+            </a>
+          </h3>
+          <p class="text-gray-600">Bachelor of Engineering in Mechanical Engineering</p>
+          <p class="text-gray-500"><em>Aug 2014 - June 2018</em></p>
+        </div>          
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <section id="skills" class="mb-12">
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-3xl font-semibold mb-6">Skills Journey ⚒️</h2>
+      <div class="relative">
+        <div class="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-200"></div>
+
+        <div class="timeline-item mb-8 flex justify-between items-center w-full" x-data="{ open: false }">
+          <div
+            class="order-1 w-5/12 px-6 py-4 bg-blue-100 rounded shadow cursor-pointer"
+            @click="open = !open"
+          >
+            <h3 class="mb-2 font-bold text-gray-800">Data Analytics</h3>
+            <p class="text-gray-700">Data Science, Machine Learning, Computer Vision and Deep Learning, Natural Language Processing, Bokeh Visuvalization</p>
+            <div x-show="open" x-transition class="mt-4 text-gray-600">
+              <p>Experienced in statistical analysis, data visualization, and predictive modeling.</p>
+            </div>
+          </div>
+          <div class="z-20 flex items-center order-2 bg-blue-500 shadow-xl w-8 h-8 rounded-full">
+            <span class="mx-auto text-white font-semibold">1</span>
+          </div>
+          <div class="order-3 w-5/12"></div>
+        </div>
+        
+        <div class="timeline-item mb-8 flex justify-between items-center w-full" x-data="{ open: false }">
+          <div class="order-1 w-5/12"></div>
+          <div class="z-20 flex items-center order-2 bg-green-500 shadow-xl w-8 h-8 rounded-full">
+            <span class="mx-auto text-white font-semibold">2</span>
+          </div>
+          <div
+            class="order-3 w-5/12 px-6 py-4 bg-green-100 rounded shadow cursor-pointer"
+            @click="open = !open"
+          >
+            <h3 class="mb-2 font-bold text-gray-800">Programming</h3>
+            <p class="text-gray-700">Python, R-programming, Shell Scripting, Java, SQL, NoSQL, DQL</p>
+            <div x-show="open" x-transition class="mt-4 text-gray-600">
+              <p>Proficient in developing scalable applications and automating workflows.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item mb-8 flex justify-between items-center w-full" x-data="{ open: false }">
+          <div
+            class="order-1 w-5/12 px-6 py-4 bg-yellow-100 rounded shadow cursor-pointer"
+            @click="open = !open"
+          >
+            <h3 class="mb-2 font-bold text-gray-800">Tools & Technologies</h3>
+            <p class="text-gray-700">Cloud Computing: Azure and AWS, Docker, Kubernetes, Cromwell, Nextflow, Nginx, CI/CD Pipelines, Documentum (ECM Software), Agile Certified Practitioner</p>
+            <div x-show="open" x-transition class="mt-4 text-gray-600">
+              <p>Experienced in containerization, orchestration, and workflow management.</p>
+            </div>
+          </div>
+          <div class="z-20 flex items-center order-2 bg-yellow-500 shadow-xl w-8 h-8 rounded-full">
+            <span class="mx-auto text-white font-semibold">3</span>
+          </div>
+          <div class="order-3 w-5/12"></div>
+        </div>
+        
+        <div class="timeline-item mb-8 flex justify-between items-center w-full" x-data="{ open: false }">
+          <div class="order-1 w-5/12"></div>
+          <div class="z-20 flex items-center order-2 bg-red-500 shadow-xl w-8 h-8 rounded-full">
+            <span class="mx-auto text-white font-semibold">4</span>
+          </div>
+          <div
+            class="order-3 w-5/12 px-6 py-4 bg-red-100 rounded shadow cursor-pointer"
+            @click="open = !open"
+          >
+            <h3 class="mb-2 font-bold text-gray-800">Web Servers</h3>
+            <p class="text-gray-700">Tornado, Django, Flask</p>
+            <div x-show="open" x-transition class="mt-4 text-gray-600">
+              <p>Skilled in building and deploying web applications and APIs.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item mb-8 flex justify-between items-center w-full" x-data="{ open: false }">
+          <div
+            class="order-1 w-5/12 px-6 py-4 bg-purple-100 rounded shadow cursor-pointer"
+            @click="open = !open"
+          >
+            <h3 class="mb-2 font-bold text-gray-800">Other Skills</h3>
+            <p class="text-gray-700">Bioinformatics, Omics, Genomics, Transcriptomics, Bulk RNA-sequemcing Analysis (DE Genes), Visium Analysis(Spatial Transcriptomics Data), ATAC-sequencing, Single-cell Analysis, AAV Capsid Engineering</p>
+            <div x-show="open" x-transition class="mt-4 text-gray-600">
+              <p>Experienced in Bioinformatics and Neuroinformatics Analysis.</p>
+            </div>
+          </div>
+          <div class="z-20 flex items-center order-2 bg-purple-500 shadow-xl w-8 h-8 rounded-full">
+            <span class="mx-auto text-white font-semibold">5</span>
+          </div>
+          <div class="order-3 w-5/12"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="mb-12">
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-3xl font-semibold mb-6">Certifications 📜</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Certification Card 1 -->
+        <div class="bg-gray-50 p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center">
+            <!-- Wrap the image with an anchor tag -->
+            <a href="https://www.michaelsutter.com/ediploma?fn=diplomastatuscheck&key=020000007d6e5e48b9f67b8258cbc63d8f541c24a43c9d0dbb90dc754f7c045f1dcd9976e4b70bb0d51c336b6c994e6051bc174fee2b2d685f889067a08feb1f6d7ca818">
+              <img src="images/alml_grad_cert.png" alt="Certificate Image" class="w-16 h-16 mr-4 object-cover rounded shadow">
+            </a>
+            <div>
+              <a href="https://www.michaelsutter.com/ediploma?fn=diplomastatuscheck&key=020000007d6e5e48b9f67b8258cbc63d8f541c24a43c9d0dbb90dc754f7c045f1dcd9976e4b70bb0d51c336b6c994e6051bc174fee2b2d685f889067a08feb1f6d7ca818" class="text-blue-600 font-semibold hover:underline">
+                Graduate Certificate in Applied Machine Learning
+              </a>
+              <p class="text-gray-600">Jun 2024</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Certification Card 2 -->
+        <div class="bg-gray-50 p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center">
+            <a href="https://success.simplilearn.com/3477eb04-5e46-4fab-9c3d-78b185a8a842#gs.h15m3k">
+              <img src="images/purdue_gl.png" alt="Certificate Image" class="w-16 h-16 mr-4 object-cover rounded shadow">
+            </a>
+            <div>
+              <a href="https://success.simplilearn.com/3477eb04-5e46-4fab-9c3d-78b185a8a842#gs.h15m3k" class="text-blue-600 font-semibold hover:underline">
+                Post Graduate Program in AI and Machine Learning
+              </a>
+              <p class="text-gray-600">Oct 2021</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Certification Card 3 -->
+        <div class="bg-gray-50 p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center">
+            <a href="https://www.credly.com/badges/6be88838-1016-4c6a-9eec-f9c508fd6d8c/public_url">
+              <img src="images/aws_cloud.png" alt="AWS Certified Cloud Practitioner" class="w-16 h-16 mr-4 object-cover rounded shadow">
+            </a>
+            <div>
+              <a href="https://www.credly.com/badges/6be88838-1016-4c6a-9eec-f9c508fd6d8c/public_url" class="text-blue-600 font-semibold hover:underline">
+                AWS Certified Cloud Practitioner
+              </a>
+              <p class="text-gray-600">May 2024</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certification Card 4 -->
+        <div class="bg-gray-50 p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center">
+            <a href="https://www.coursera.org/account/accomplishments/verify/YK6BZC2FJCVK">
+              <img src="images/ibm_devops.png" alt="Introduction to DevOps [IBM]" class="w-16 h-16 mr-4 object-cover rounded shadow">
+            </a>
+            <div>
+              <a href="https://www.coursera.org/account/accomplishments/verify/YK6BZC2FJCVK" class="text-blue-600 font-semibold hover:underline">
+                Introduction to DevOps [IBM]
+              </a>
+              <p class="text-gray-600">Jul 2024</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certification Card 5 -->
+        <div class="bg-gray-50 p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center">
+            <a href="https://www.credly.com/badges/878ac772-4cd4-4e17-a627-379ffeb9b47a?source=linked_in_profile">
+              <img src="images/microsoft-certified-azure-fundamentals.png" alt="Microsoft Certified: Azure Fundamentals" class="w-16 h-16 mr-4 object-cover rounded shadow">
+            </a>
+            <div>
+              <a href="https://www.credly.com/badges/878ac772-4cd4-4e17-a627-379ffeb9b47a?source=linked_in_profile" class="text-blue-600 font-semibold hover:underline">
+                Microsoft Certified: Azure Fundamentals
+              </a>
+              <p class="text-gray-600">Jun 2021</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certification Card 6 -->
+        <div class="bg-gray-50 p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center">
+            <a href="https://www.coursera.org/account/accomplishments/verify/YK6BZC2FJCVK">
+              <img src="images/microsoft-certified-azure-data-fundamentals.png" alt="Microsoft Certified: Azure Data Fundamentals" class="w-16 h-16 mr-4 object-cover rounded shadow">
+            </a>
+            <div>
+              <a href="https://www.coursera.org/account/accomplishments/verify/YK6BZC2FJCVK" class="text-blue-600 font-semibold hover:underline">
+                Microsoft Certified: Azure Data Fundamentals
+              </a>
+              <p class="text-gray-600">Jul 2021</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certification Card 7 -->
+        <div class="bg-gray-50 p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center">
+            <a href="https://www.coursera.org/account/accomplishments/verify/YK6BZC2FJCVK">
+              <img src="images/microsoft-certified-azure-ai-fundamentals.png" alt="Microsoft Certified: Azure AI Fundamentals" class="w-16 h-16 mr-4 object-cover rounded shadow">
+            </a>
+            <div>
+              <a href="https://www.coursera.org/account/accomplishments/verify/YK6BZC2FJCVK" class="text-blue-600 font-semibold hover:underline">
+                Microsoft Certified: Azure AI Fundamentals
+              </a>
+              <p class="text-gray-600">Jul 2021</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Add more certification cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow mt-8">
+    <div class="container mx-auto px-4 py-4 text-center">
+      &copy; 2024 Nikhil Nageshwar Inturi
+    </div>
+  </footer>
+
+  <!-- Modal Template -->
+  <div x-data="{ modalOpen: false, modalImage: '' }" x-cloak>
+    <div x-show="modalOpen" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center">
+      <div class="bg-white p-4 rounded shadow-lg relative">
+        <button @click="modalOpen = false" class="absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+        <img :src="modalImage" alt="Certificate Image" class="max-w-full max-h-screen">
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Modal -->
+  <script>
+    document.querySelectorAll('.certificate-image').forEach(img => {
+      img.addEventListener('click', function() {
+        const modal = document.querySelector('[x-data="{ modalOpen: false, modalImage: \'\' }"]');
+        modal.__x.$data.modalImage = this.src;
+        modal.__x.$data.modalOpen = true;
+      });
+    });
+  </script>
+
+  <!-- Smooth Scrolling -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+
+<div id="imageModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+  <div class="relative bg-white p-4 rounded-lg shadow-lg max-w-3xl w-full">
+    <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-xl font-bold">&times;</button>
+    <img id="modalImage" src="" alt="Expanded image" class="w-full h-auto rounded-lg">
+  </div>
+</div>
+
+<!-- Place JavaScript code for modal functionality here or in a separate script file -->
+<script>
+  function openModal(imageSrc) {
+    document.getElementById('modalImage').src = imageSrc;
+    document.getElementById('imageModal').classList.remove('hidden');
+  }
+
+  function closeModal() {
+    document.getElementById('imageModal').classList.add('hidden');
+  }
+</script>
+
+<script>
+  const themeToggle = document.getElementById("theme-toggle");
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    themeToggle.innerText = document.body.classList.contains("dark") ? "🌙" : "🌞";
+  });
+</script>
+
+<script>
+  particlesJS('particles-js', {
+    particles: {
+      number: {
+        value: 80,
+        density: {
+          enable: true,
+          value_area: 800
+        }
+      },
+      color: {
+        value: '#4B5563' // gray-600
+      },
+      shape: {
+        type: 'circle'
+      },
+      opacity: {
+        value: 0.5,
+        random: false
+      },
+      size: {
+        value: 3,
+        random: true
+      },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: '#4B5563',
+        opacity: 0.4,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 2,
+        direction: 'none',
+        random: false,
+        straight: false,
+        out_mode: 'out',
+        bounce: false
+      }
+    },
+    interactivity: {
+      detect_on: 'canvas',
+      events: {
+        onhover: {
+          enable: true,
+          mode: 'grab'
+        },
+        onclick: {
+          enable: true,
+          mode: 'push'
+        },
+        resize: true
+      },
+      modes: {
+        grab: {
+          distance: 140,
+          line_linked: {
+            opacity: 1
+          }
+        },
+        push: {
+          particles_nb: 4
+        }
+      }
+    },
+    retina_detect: true
+  });
+</script>
+
+</body>
+</html>
