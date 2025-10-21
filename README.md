@@ -14,9 +14,6 @@ Curious about my journey?
   <img src="https://profile-counter.glitch.me/unikill066/count.svg" />
 </p> -->
 
-## GitHub Stats
-![Profile Views](https://count.getloli.com/get/@unikill066?theme=rule34)
-
 ## 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/nikhilinturi) [![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/nikhil-int) 
 
@@ -26,6 +23,8 @@ Curious about my journey?
 ![](https://github-readme-stats.vercel.app/api?username=unikill066&theme=dark&hide_border=false&include_all_commits=true&count_private=true)<br/>
 ![](https://github-readme-streak-stats.herokuapp.com/?user=unikill066&theme=dark&hide_border=false)<br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=unikill066&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
+
+![Profile Views](https://count.getloli.com/get/@unikill066?theme=rule34)
 
 ### 🔝 Top Contributed Repo
 ![](https://github-contributor-stats.vercel.app/api?username=unikill066&limit=5&theme=dark&combine_all_yearly_contributions=true)
