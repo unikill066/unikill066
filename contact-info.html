@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Information</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Add this in the head section -->
+  <style>
+    .contact-icon {
+      transition: transform 0.3s ease, filter 0.3s ease;
+      display: inline-block;
+      padding: 15px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 0 15px;
+    }
+
+    .contact-icon:hover {
+      transform: translateY(-5px) scale(1.1);
+      filter: brightness(1.2);
+    }
+
+    .icon-svg, .icon-fontawesome {
+      width: 30px;
+      height: 30px;
+    }
+
+    .contact-card {
+      backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    }
+
+    .contact-icon {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-icon::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .contact-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+    }
+
+    .contact-icon:hover::after {
+      opacity: 1;
+    }
+
+    main {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      padding-top: 100px;
+    }
+
+    #particles-js {
+    pointer-events: none;
+   }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <!-- Header -->
+  <header class="bg-white shadow fixed w-full z-10">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">
+            <a href="index.html" class="text-gray-800 hover:text-blue-600">Nikhil Nageshwar Inturi</a>
+        </h1>
+        <nav nav class="flex items-center space-x-4">
+            <a href="index.html#experience" class="text-gray-600 hover:text-blue-600">Experience</a>
+            <a href="index.html#publications" class="text-gray-600 hover:text-blue-600">Publications</a>
+            <a href="index.html#education" class="text-gray-600 hover:text-blue-600">Education</a>
+            <a href="index.html#skills" class="text-gray-600 hover:text-blue-600">Skills</a>
+            <a href="index.html#certifications" class="text-gray-600 hover:text-blue-600">Certifications</a>
+            <!-- <a href="articles.html" class="text-gray-600 hover:text-blue-600">Articles</a> -->
+            <a href="index.html#articles" class="text-gray-600 hover:text-blue-600">Articles</a>
+            <a href="contact-info.html" class="text-gray-600 hover:text-blue-600">Contact</a>
+            <div x-data="{ open: false }" class="relative inline-block">
+              <button @click="open = !open" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                  Misc
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+              </button>
+              <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 z-50">
+                  <a href="internship.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">CAPS - Internship Experience</a>
+                  <a href="quite_canopy.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">Nature's Nexus</a>
+              </div>
+            </div>
+            <a href="https://github.com/unikill066" style="color: black; text-decoration: none;" class="text-gray-600 hover:text-gray-800 ml-2" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37258 0 0 5.37258 0 12C0 17.3023 3.43839 21.8005 8.20506 23.3853C8.80506 23.4973 9.0253 23.1531 9.0253 22.8628V20.6141C5.67264 21.2953 4.96883 19.0094 4.96883 19.0094C4.42202 17.5816 3.6338 17.2082 3.6338 17.2082C2.54667 16.498 3.71395 16.515 3.71395 16.515C4.91449 16.6059 5.55017 17.7625 5.55017 17.7625C6.6253 19.6227 8.42809 19.1102 9.13973 18.8383C9.24977 18.0547 9.56429 17.5477 9.9164 17.2578C7.23929 16.9473 4.39759 15.9273 4.39759 11.3619C4.39759 10.0758 4.85447 9.04682 5.60598 8.25348C5.48612 7.95879 5.09136 6.69347 5.72212 5.05685C5.72212 5.05685 6.71673 4.72503 9.0253 6.3359C9.96801 6.07871 10.9762 5.94669 11.9844 5.94118C12.9926 5.94669 14.0008 6.07871 14.9435 6.3359C17.2521 4.72503 18.2467 5.05685 18.2467 5.05685C18.8775 6.69347 18.4827 7.95879 18.3629 8.25348C19.1144 9.04682 19.5713 10.0758 19.5713 11.3619C19.5713 15.9373 16.7296 16.9443 14.0525 17.2518C14.4917 17.6327 14.8775 18.3429 14.8775 19.4702V22.8628C14.8775 23.1563 15.0959 23.5025 15.7015 23.3853C20.4682 21.8005 23.9066 17.3023 23.9066 12C23.9066 5.37258 18.5341 0 12 0Z" />
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/nikhilinturi/" style="color: #0A66C2; text-decoration: none;" class="text-gray-600 hover:text-gray-800" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22.23 0H1.77C.792 0 0 .774 0 1.727V22.27C0 23.226.792 24 1.77 24H22.23C23.207 24 24 23.226 24 22.273V1.727C24 .774 23.207 0 22.23 0ZM7.059 20.452H3.573V9H7.059V20.452ZM5.316 7.466C4.151 7.466 3.209 6.512 3.209 5.34C3.209 4.167 4.151 3.214 5.316 3.214C6.477 3.214 7.42 4.167 7.42 5.34C7.42 6.512 6.477 7.466 5.316 7.466ZM20.452 20.452H16.965V14.826C16.965 13.503 16.939 11.814 15.115 11.814C13.267 11.814 13.004 13.238 13.004 14.733V20.452H9.518V9H12.873V10.513H12.921C13.369 9.674 14.465 8.783 16.001 8.783C19.416 8.783 20.452 10.958 20.452 14.104V20.452Z"/>
+                </svg>
+            </a>
+        </nav>
+    </div>
+</header>
+
+  <main class="pt-20 pb-12">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12"> <!-- Increased margin-bottom -->
+        <h1 class="text-4xl font-bold mb-8 typing-animation" x-data="{ text: '', fullText: 'Let\'s Connect!' }" x-init="
+          function typeWriter() {
+            if(text.length < fullText.length) {
+              text += fullText[text.length];
+              setTimeout(typeWriter, 100);
+            }
+          }
+          typeWriter();
+        " x-text="text"></h1>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto px-4">
+
+        <div x-data="{ isHovered: false }">
+          <div class="bg-white p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 h-full"
+              @mouseenter="isHovered = true" @mouseleave="isHovered = false">
+            <a href="mailto:inturinikhilnageshwar@gmail.com" class="block text-center">
+              <div class="contact-icon mx-auto mb-4" style="color: rgb(228, 26, 26);">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20 4H4C2.897 4 2 4.897 2 6V18C2 19.103 2.897 20 4 20H20C21.103 20 22 19.103 22 18V6C22 4.897 21.103 4 20 4ZM20 6L12 11L4 6H20ZM4 18V8L12 13L20 8V18H4Z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Email</h3>
+              <p class="text-gray-600" x-show="isHovered">Click to send me an email!</p>
+            </a>
+          </div>
+        </div>
+
+        <div x-data="{ isHovered: false }">
+          <div class="bg-white p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 h-full"
+              @mouseenter="isHovered = true" @mouseleave="isHovered = false">
+            <a href="https://www.linkedin.com/in/nikhilinturi/" class="block text-center" target="_blank" rel="noopener noreferrer">
+              <div class="contact-icon mx-auto mb-4" style="color: #0A66C2;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M22.23 0H1.77C.792 0 0 .774 0 1.727V22.27C0 23.226.792 24 1.77 24H22.23C23.207 24 24 23.226 24 22.273V1.727C24 .774 23.207 0 22.23 0ZM7.059 20.452H3.573V9H7.059V20.452ZM5.316 7.466C4.151 7.466 3.209 6.512 3.209 5.34C3.209 4.167 4.151 3.214 5.316 3.214C6.477 3.214 7.42 4.167 7.42 5.34C7.42 6.512 6.477 7.466 5.316 7.466ZM20.452 20.452H16.965V14.826C16.965 13.503 16.939 11.814 15.115 11.814C13.267 11.814 13.004 13.238 13.004 14.733V20.452H9.518V9H12.873V10.513H12.921C13.369 9.674 14.465 8.783 16.001 8.783C19.416 8.783 20.452 10.958 20.452 14.104V20.452Z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">LinkedIn</h3>
+              <p class="text-gray-600" x-show="isHovered">Connect with me on LinkedIn!</p>
+            </a>
+          </div>
+        </div>
+
+        <div x-data="{ isHovered: false }">
+          <div class="bg-white p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 h-full"
+              @mouseenter="isHovered = true" @mouseleave="isHovered = false">
+            <a href="https://github.com/unikill066" class="block text-center" target="_blank" rel="noopener noreferrer">
+              <div class="contact-icon mx-auto mb-4" style="color: #333;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37258 0 0 5.37258 0 12C0 17.3023 3.43839 21.8005 8.20506 23.3853C8.80506 23.4973 9.0253 23.1531 9.0253 22.8628V20.6141C5.67264 21.2953 4.96883 19.0094 4.96883 19.0094C4.42202 17.5816 3.6338 17.2082 3.6338 17.2082C2.54667 16.498 3.71395 16.515 3.71395 16.515C4.91449 16.6059 5.55017 17.7625 5.55017 17.7625C6.6253 19.6227 8.42809 19.1102 9.13973 18.8383C9.24977 18.0547 9.56429 17.5477 9.9164 17.2578C7.23929 16.9473 4.39759 15.9273 4.39759 11.3619C4.39759 10.0758 4.85447 9.04682 5.60598 8.25348C5.48612 7.95879 5.09136 6.69347 5.72212 5.05685C5.72212 5.05685 6.71673 4.72503 9.0253 6.3359C9.96801 6.07871 10.9762 5.94669 11.9844 5.94118C12.9926 5.94669 14.0008 6.07871 14.9435 6.3359C17.2521 4.72503 18.2467 5.05685 18.2467 5.05685C18.8775 6.69347 18.4827 7.95879 18.3629 8.25348C19.1144 9.04682 19.5713 10.0758 19.5713 11.3619C19.5713 15.9373 16.7296 16.9443 14.0525 17.2518C14.4917 17.6327 14.8775 18.3429 14.8775 19.4702V22.8628C14.8775 23.1563 15.0959 23.5025 15.7015 23.3853C20.4682 21.8005 23.9066 17.3023 23.9066 12C23.9066 5.37258 18.5341 0 12 0Z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">GitHub</h3>
+              <p class="text-gray-600" x-show="isHovered">Check out my projects on GitHub!</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </main>
+
+  
+  <footer class="bg-white shadow mt-8">
+    <div class="container mx-auto px-4 py-4 text-center">
+      &copy; 2024 Nikhil Nageshwar Inturi
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles-js" class="fixed inset-0 z-0"></div>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: '#6B7280' },
+        opacity: { value: 0.2 },
+        size: { value: 3 },
+        line_linked: { enable: true, distance: 150, color: '#6B7280', opacity: 0.2, width: 1 }
+      }
+    });
+  </script>
+
+</body>
+</html>
