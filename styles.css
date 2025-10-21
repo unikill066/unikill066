@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 0;
+}
+
+.contact-info-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center; /* Centered heading and icons */
+}
+
+.contact-info-container h1 {
+    color: #333;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center; /* Center icons horizontally */
+    align-items: center; /* Align icons vertically in case of varying sizes */
+    gap: 50px; /* Space between each icon */
+    margin-top: 20px; /* Margin from the content above */
+}
+
+.contact-icon i {
+    font-size: 64px; /* Bigger icon size */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.contact-icon:hover i {
+    transform: scale(1.2); /* Enlarge icons on hover */
+}
+
+.contact-icon svg {
+    font-size: 48px; /* Make the icons bigger */
+    width: 48px; /* Ensure the SVG icons also scale appropriately */
+    height: 48px;
+}
+
+.contact-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Add padding to make icons easier to click */
+}
+
+
+/* SVG Mail icon size */
+.icon-svg {
+    width: 48px; /* Larger size for visibility */
+    height: 48px;
+}
+
+/* Font Awesome icon size */
+.icon-fontawesome {
+    font-size: 48px; /* Larger Font Awesome icons */
+}
+
+.icon-large {
+        font-size: 48px; /* Adjust size */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 100px auto; /* Add margin to account for the fixed header */
+    text-align: center; /* Centered heading and icons */
+}
+
+header {
+    height: 64px; /* Ensure header height is specified */
+}
+
+main {
+    padding-top: 80px; /* Add enough padding to clear the fixed header */
+}
+
+.fixed-size-container {
+    width: 100%; /* Adjust this to your preferred width */
+    max-width: 600px; /* Optional: limits width to a certain max */
+    height: 700px; /* Fixed height for consistency */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fixed-size-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container fully */
+}
+
+.custom-size-container {
+  width: 80%; /* Adjust width as desired */
+  max-width: 950px; /* Optional max width */
+  height: 550px; /* Fixed height for this specific image */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-size-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+.creative-paragraph {
+    background: linear-gradient(135deg, rgba(173, 216, 230, 0.5), rgba(240, 255, 255, 0.5));
+    border: 1px solid rgba(173, 216, 230, 0.3);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.earth-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 200px; /* Adjust size as needed */
+    color: rgba(59, 130, 246, 0.1); /* Light blue with transparency */
+    z-index: 1; /* Places icon behind the text */
+    pointer-events: none; /* Prevents interaction with the icon */
+}
+
+.creative-paragraph p {
+    position: relative;
+    z-index: 10; /* Ensures text is above the Earth icon */
+}
+
+/* Text and animation styles remain the same */
+.animate-fade-in {
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

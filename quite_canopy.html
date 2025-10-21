@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Internship Experience - Nikhil Nageshwar Inturi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js for interactivity -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-F0QY6Y+PjIxOQ77RLJ33JZxVLHfrL0I4hIw2LU5BT4D1b3O/YRMbF6BiQdKk3xHy" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow fixed w-full z-10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">
+                <a href="index.html" class="text-gray-800 hover:text-blue-600">Nikhil Nageshwar Inturi</a>
+            </h1>
+            <nav nav class="flex items-center space-x-4">
+                <a href="index.html#experience" class="text-gray-600 hover:text-blue-600">Experience</a>
+                <a href="index.html#publications" class="text-gray-600 hover:text-blue-600">Publications</a>
+                <a href="index.html#education" class="text-gray-600 hover:text-blue-600">Education</a>
+                <a href="index.html#skills" class="text-gray-600 hover:text-blue-600">Skills</a>
+                <a href="index.html#certifications" class="text-gray-600 hover:text-blue-600">Certifications</a>
+                <!-- <a href="articles.html" class="text-gray-600 hover:text-blue-600">Articles</a> -->
+                <a href="index.html#articles" class="text-gray-600 hover:text-blue-600">Articles</a>
+                <a href="contact-info.html" class="text-gray-600 hover:text-blue-600">Contact</a>
+                <div x-data="{ open: false }" class="relative inline-block">
+                    <button @click="open = !open" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                        Misc
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 z-50">
+                        <a href="internship.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">CAPS - Internship Experience</a>
+                        <a href="quite_canopy.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">Nature's Nexus</a>
+                    </div>
+                </div>
+                <a href="https://github.com/unikill066" style="color: black; text-decoration: none;" class="text-gray-600 hover:text-gray-800 ml-2" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37258 0 0 5.37258 0 12C0 17.3023 3.43839 21.8005 8.20506 23.3853C8.80506 23.4973 9.0253 23.1531 9.0253 22.8628V20.6141C5.67264 21.2953 4.96883 19.0094 4.96883 19.0094C4.42202 17.5816 3.6338 17.2082 3.6338 17.2082C2.54667 16.498 3.71395 16.515 3.71395 16.515C4.91449 16.6059 5.55017 17.7625 5.55017 17.7625C6.6253 19.6227 8.42809 19.1102 9.13973 18.8383C9.24977 18.0547 9.56429 17.5477 9.9164 17.2578C7.23929 16.9473 4.39759 15.9273 4.39759 11.3619C4.39759 10.0758 4.85447 9.04682 5.60598 8.25348C5.48612 7.95879 5.09136 6.69347 5.72212 5.05685C5.72212 5.05685 6.71673 4.72503 9.0253 6.3359C9.96801 6.07871 10.9762 5.94669 11.9844 5.94118C12.9926 5.94669 14.0008 6.07871 14.9435 6.3359C17.2521 4.72503 18.2467 5.05685 18.2467 5.05685C18.8775 6.69347 18.4827 7.95879 18.3629 8.25348C19.1144 9.04682 19.5713 10.0758 19.5713 11.3619C19.5713 15.9373 16.7296 16.9443 14.0525 17.2518C14.4917 17.6327 14.8775 18.3429 14.8775 19.4702V22.8628C14.8775 23.1563 15.0959 23.5025 15.7015 23.3853C20.4682 21.8005 23.9066 17.3023 23.9066 12C23.9066 5.37258 18.5341 0 12 0Z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/nikhilinturi/" style="color: #0A66C2; text-decoration: none;" class="text-gray-600 hover:text-gray-800" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.23 0H1.77C.792 0 0 .774 0 1.727V22.27C0 23.226.792 24 1.77 24H22.23C23.207 24 24 23.226 24 22.273V1.727C24 .774 23.207 0 22.23 0ZM7.059 20.452H3.573V9H7.059V20.452ZM5.316 7.466C4.151 7.466 3.209 6.512 3.209 5.34C3.209 4.167 4.151 3.214 5.316 3.214C6.477 3.214 7.42 4.167 7.42 5.34C7.42 6.512 6.477 7.466 5.316 7.466ZM20.452 20.452H16.965V14.826C16.965 13.503 16.939 11.814 15.115 11.814C13.267 11.814 13.004 13.238 13.004 14.733V20.452H9.518V9H12.873V10.513H12.921C13.369 9.674 14.465 8.783 16.001 8.783C19.416 8.783 20.452 10.958 20.452 14.104V20.452Z"/>
+                    </svg>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto pt-24 px-4">
+        <section class="mb-8">
+            <h2 class="text-4xl font-bold text-gray-800">
+                Exploring life's abstractions, one journey at a time!
+            </h2>
+            <p class="text-gray-500 mt-4">2022-2024</p>
+        </section>
+
+        <div class="w-full mb-8">
+            <img src="images/1.PNG" alt="CAPS Logo" class="w-full object-cover">
+        </div>
+
+        <section class="bg-white p-6 rounded shadow mb-12">
+            <div class="creative-paragraph bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-lg mb-12 relative overflow-hidden">
+                <div class="earth-icon opacity-40">
+                    🌍
+                </div>
+                <p class="text-lg text-gray-800 leading-relaxed italic opacity-0 animate-fade-in">
+                    <span class="block text-3xl font-bold text-blue-800 mb-4 tracking-wider">Welcome to Nature’s Nexus</span>
+                    A digital diary where I document my explorations through some of the world’s most breathtaking landscapes. From the untamed beauty of lush forests to the serene expanses of desolate deserts, I invite you to join me on a journey across the globe. Here, you’ll find not just travel logs and photography, but reflections on the intersections of nature, culture, and the subtle science that connects them. Each post aims to capture the essence of place and moment, encouraging mindfulness and a deep appreciation for our incredible planet. So lace up your boots, pack your curiosity, and let’s discover the wonders of the natural world together.
+                </p>
+            </div>
+            
+            <div class="flex mb-8 flex-col items-center justify-center">
+                <div class="custom-size-container">
+                    <img src="images/2.png" alt="CAPS Logo" class="custom-size-img rounded-lg shadow-lg">
+                </div>
+                <p class="text-center text-gray-600 mt-4">Snoqualamie, Washington [2023]</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                <div class="flex flex-col items-center">
+                    <div class="fixed-size-container">
+                        <img src="images/3.jpg" alt="Desert Landscape" class="fixed-size-img rounded-lg shadow-lg">
+                    </div>
+                    <p class="text-center text-gray-600 mb-6 mt-2">Oregon [2024]</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="fixed-size-container">
+                        <img src="images/4.JPG" alt="Mountain Range" class="fixed-size-img rounded-lg shadow-lg">
+                    </div>
+                    <p class="text-center text-gray-600 mb-6 mt-2">Whistler and Blackcomb Peak, British Columbia, Canada [2024]</p>
+                </div>
+            </div>
+            
+            <div class="w-full mb-8 flex flex-col items-center justify-center">
+                <div class="custom-size-container">
+                    <img src="images/5.png" alt="Landscape Image" class="custom-size-img rounded-lg shadow-lg">
+                </div>
+                <p class="text-center text-gray-600 mt-4">Snoqualamie, Washington [2023]</p>
+            </div>
+            
+            <div class="w-full mb-8 flex flex-col items-center justify-center">
+                <div class="custom-size-container">
+                    <img src="images/6.png" alt="Lake View" class="custom-size-img rounded-lg shadow-lg">
+                </div>
+                <p class="text-center text-gray-600 mt-4">Space Needle overlooking Lake Union [2023]</p>
+            </div>
+            
+            <div class="w-full mb-8 flex flex-col items-center justify-center">
+                <div class="custom-size-container">
+                    <img src="images/8.png" alt="Forest View" class="custom-size-img rounded-lg shadow-lg">
+                </div>
+                <p class="text-center text-gray-600 mt-4">Dallas Downtown [2022]</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                <div class="flex flex-col items-center">
+                    <div class="fixed-size-container">
+                        <img src="images/9.png" alt="Desert Landscape" class="fixed-size-img rounded-lg shadow-lg">
+                    </div>
+                    <p class="text-center text-gray-600 mb-6 mt-2">Dallas Downtown [2022]</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="fixed-size-container">
+                        <img src="images/10.png" alt="Mountain Range" class="fixed-size-img rounded-lg shadow-lg">
+                    </div>
+                    <p class="text-center text-gray-600 mb-6 mt-2">Dallas Downtown [2022]</p>
+                </div>
+            </div>
+            
+            <div class="w-full mb-8 flex flex-col items-center justify-center">
+                <div class="custom-size-container">
+                    <img src="images/11.jpg" alt="NorthSide" class="custom-size-img rounded-lg shadow-lg">
+                </div>
+                <p class="text-center text-gray-600 mt-4">Northside, Richardson, TX [2022]</p>
+            </div>
+            
+        </section>
+
+        <footer class="bg-white shadow py-6 mt-12">
+            <div class="container mx-auto text-center">
+                <p>&copy; 2024 Nikhil Nageshwar Inturi</p>
+            </div>
+        </footer>
+    </main>
+
+</body>
+</html>
+
+
