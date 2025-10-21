@@ -8,11 +8,14 @@ Curious about my journey?
 *🔗  [Explore my Portfolio, and get in touch!](https://inturinikhilnageshwar.netlify.app)*  
 
 <!-- visiros count -->
-<p align="center">
+<!-- <p align="center">
   Visitor count
   <br/>
   <img src="https://profile-counter.glitch.me/unikill066/count.svg" />
-</p>
+</p> -->
+
+## GitHub Stats
+![Profile Views](https://count.getloli.com/get/@unikill066?theme=rule34)
 
 ## 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/nikhilinturi) [![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/nikhil-int) 
