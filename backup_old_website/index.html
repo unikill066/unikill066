@@ -1,0 +1,2251 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <title>Nikhil Nageshwar Inturi - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-F0QY6Y+PjIxOQ77RLJ33JZxVLHfrL0I4hIw2LU5BT4D1b3O/YRMbF6BiQdKk3xHy" crossorigin="anonymous">
+  <link rel="stylesheet" href="skills.css">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <style>
+    /* 1) container with perspective */
+    .flip-card {
+      width: 20rem;          /* match your w-64 */
+      aspect-ratio: 1 / 1;           /* keep it a square for a perfect circle */
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    /* 2) the inner face‐stack we rotate */
+    .flip-card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s ease-in-out;
+    }
+    /* 3) front + back faces */
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 50%;      /* perfect circle */
+      overflow: hidden;
+    }
+    /* 4) back face flipped by default */
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+    /* 5) when .flipped is toggled, rotate the inner wrapper */
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+  </style>
+  <style>
+    .flip-card {
+      width: 20rem;
+      aspect-ratio: 1 / 1;    /* force square */
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .flip-card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s ease-in-out;
+    }
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 50%;     /* perfect circle */
+      overflow: hidden;
+    }
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+  </style>  
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <div id="particles-js" class="fixed inset-0 z-0"></div>
+  <header class="bg-white shadow fixed w-full z-10">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold id=animated-name class=text-2xl">
+        <a href="index.html" class="text-gray-800 hover:text-blue-600">Nikhil Nageshwar Inturi</a>
+      </h1>
+      
+      <nav nav class="flex items-center space-x-4">
+        <a href="#experience" class="text-gray-600 hover:text-blue-600">Experience</a>
+        <a href="#publications" class="text-gray-600 hover:text-blue-600">Publications</a>
+        <a href="#projects" class="text-gray-600 hover:text-blue-600">Projects</a>
+        <a href="#education" class="text-gray-600 hover:text-blue-600">Education</a>
+        <a href="#skills" class="text-gray-600 hover:text-blue-600">Skills</a>
+        <a href="#certifications" class="text-gray-600 hover:text-blue-600">Certifications</a>
+        <a href="#articles" class="text-gray-600 hover:text-blue-600">Articles</a>
+        <a href="contact-info.html" class="text-gray-600 hover:text-blue-600">Contact</a>
+        <div x-data="{ open: false }" class="relative inline-block">
+          <button @click="open = !open" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+              Misc
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+          </button>
+          <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 z-50">
+              <a href="internship.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">CAPS - Internship Experience</a>
+              <a href="quite_canopy.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">Nature's Nexus</a>
+          </div>
+        </div>
+        <a href="https://github.com/unikill066" style="color: black; text-decoration: none;" class="text-gray-600 hover:text-gray-800 ml-2" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37258 0 0 5.37258 0 12C0 17.3023 3.43839 21.8005 8.20506 23.3853C8.80506 23.4973 9.0253 23.1531 9.0253 22.8628V20.6141C5.67264 21.2953 4.96883 19.0094 4.96883 19.0094C4.42202 17.5816 3.6338 17.2082 3.6338 17.2082C2.54667 16.498 3.71395 16.515 3.71395 16.515C4.91449 16.6059 5.55017 17.7625 5.55017 17.7625C6.6253 19.6227 8.42809 19.1102 9.13973 18.8383C9.24977 18.0547 9.56429 17.5477 9.9164 17.2578C7.23929 16.9473 4.39759 15.9273 4.39759 11.3619C4.39759 10.0758 4.85447 9.04682 5.60598 8.25348C5.48612 7.95879 5.09136 6.69347 5.72212 5.05685C5.72212 5.05685 6.71673 4.72503 9.0253 6.3359C9.96801 6.07871 10.9762 5.94669 11.9844 5.94118C12.9926 5.94669 14.0008 6.07871 14.9435 6.3359C17.2521 4.72503 18.2467 5.05685 18.2467 5.05685C18.8775 6.69347 18.4827 7.95879 18.3629 8.25348C19.1144 9.04682 19.5713 10.0758 19.5713 11.3619C19.5713 15.9373 16.7296 16.9443 14.0525 17.2518C14.4917 17.6327 14.8775 18.3429 14.8775 19.4702V22.8628C14.8775 23.1563 15.0959 23.5025 15.7015 23.3853C20.4682 21.8005 23.9066 17.3023 23.9066 12C23.9066 5.37258 18.5341 0 12 0Z" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/nikhilinturi/" style="color: #0A66C2; text-decoration: none;" class="text-gray-600 hover:text-gray-800" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22.23 0H1.77C.792 0 0 .774 0 1.727V22.27C0 23.226.792 24 1.77 24H22.23C23.207 24 24 23.226 24 22.273V1.727C24 .774 23.207 0 22.23 0ZM7.059 20.452H3.573V9H7.059V20.452ZM5.316 7.466C4.151 7.466 3.209 6.512 3.209 5.34C3.209 4.167 4.151 3.214 5.316 3.214C6.477 3.214 7.42 4.167 7.42 5.34C7.42 6.512 6.477 7.466 5.316 7.466ZM20.452 20.452H16.965V14.826C16.965 13.503 16.939 11.814 15.115 11.814C13.267 11.814 13.004 13.238 13.004 14.733V20.452H9.518V9H12.873V10.513H12.921C13.369 9.674 14.465 8.783 16.001 8.783C19.416 8.783 20.452 10.958 20.452 14.104V20.452Z"/>
+          </svg>
+        </a>
+
+        <button id="theme-toggle" class="" top-4 right-4 p-2 bg-gray-300 rounded">🌞</button>
+      </nav>
+      
+    </div>
+  </header>
+
+
+<main class="container mx-auto px-4 py-24">
+
+  <!-- About Information -->
+  <section id="about" class="mb-12">
+    <div class="bg-white p-6 rounded shadow">
+        <h2 class="text-3xl font-semibold mb-4">About 📝</h2>
+        <hr class="border-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 my-6"> 
+        <!-- <hr style="border: 0; height: 2px; background: linear-gradient(to right, #f0f0f0, #2c3e50, #f0f0f0); margin-top: 20px; margin-bottom: 20px;"> -->
+
+        <div class="flex items-center">
+            <!-- old main -->
+            <!-- <img src="images/nikk.jpeg" alt="Nikhil Nageshwar Inturi" class="w-64 h-84 rounded-full border-2 border-gray-800 mr-8"> -->
+            <!-- old not so relevant -->
+            <!-- <img src="images/nik.jpg" alt="Nikhil Nageshwar Inturi" class="w-64 h-84 rounded-lg border-4 border-gray-200 shadow-xl transform hover:scale-105 transition-transform duration-300"> Enhanced image styling -->
+            
+            <div id="flipCard" class="flip-card mr-8">
+              <div class="flip-card-inner">
+                <img
+                  src="images/nikk.JPG"
+                  alt="Nikhil (back)"
+                  class="flip-card-back w-full h-full object-cover border-2 border-gray-800">
+
+                <img
+                  src="images/nikk.jpeg"
+                  alt="Nikhil (front)"
+                  class="flip-card-front w-full h-full object-cover border-2 border-gray-800">
+                
+              </div>
+            </div>
+            
+            <div>
+              <!-- <h1 class="text-4xl text-gray-600 mt-5 mb-5">Nikhil Nageshwar Inturi</h1>  -->
+              <h1 class="text-4xl text-gray-600 mt-5 mb-5">
+                <a href="index.html">Nikhil Nageshwar Inturi - </a>
+                <!-- <span id="typed-role" class="ml-2 text-orange-500 border-r-2 border-orange-500 pr-1"></span> -->
+                <span id="typed-role" class="ml-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 border-r-2 border-pink-500 pr-1"></span>
+              </h1>
+              <h2 class="text-xl text-gray-600 mt-5 mb-5"><strong>Sr. Data Scientist</strong> and <strong>Bioinformatician</strong> at the Center for Advanced Pain Studies | Machine Learning in Biopharma R&D and Drug Discovery</h2>
+                <div class="flex items-center mt-2 space-x-2">
+                  <a href="https://medium.com/@inturinikhilnageshwar" style="color: #12100E; text-decoration: none;" class="text-gray-600 hover:text-gray-800 ml-2" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-10" fill="#12100E" viewBox="0 0 24 24">
+                      <circle cx="6" cy="12" r="5" />
+                      <ellipse cx="17" cy="12" rx="4" ry="5" />
+                      <ellipse cx="22" cy="12" rx="1" ry="5" />
+                    </svg>
+                  </a>
+                  <a href="https://scholar.google.com/citations?user=9mU1K0cAAAAJ&hl=en" style="text-decoration: none;" class="ml-2" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="h-10 w-10">
+                      <g>
+                        <polygon fill="#4285F4" points="24,6 44,18 24,30 4,18"/>
+                        <circle fill="#AECBFA" cx="24" cy="32" r="10"/>
+                        <rect fill="#AECBFA" x="14" y="32" width="20" height="4"/>
+                      </g>
+                    </svg>
+                  </a>
+                  <a href="https://github.com/unikill066" style="color: black; text-decoration: none;" class="text-gray-600 hover:text-gray-800 mr-4" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0C5.37258 0 0 5.37258 0 12C0 17.3023 3.43839 21.8005 8.20506 23.3853C8.80506 23.4973 9.0253 23.1531 9.0253 22.8628V20.6141C5.67264 21.2953 4.96883 19.0094 4.96883 19.0094C4.42202 17.5816 3.6338 17.2082 3.6338 17.2082C2.54667 16.498 3.71395 16.515 3.71395 16.515C4.91449 16.6059 5.55017 17.7625 5.55017 17.7625C6.6253 19.6227 8.42809 19.1102 9.13973 18.8383C9.24977 18.0547 9.56429 17.5477 9.9164 17.2578C7.23929 16.9473 4.39759 15.9273 4.39759 11.3619C4.39759 10.0758 4.85447 9.04682 5.60598 8.25348C5.48612 7.95879 5.09136 6.69347 5.72212 5.05685C5.72212 5.05685 6.71673 4.72503 9.0253 6.3359C9.96801 6.07871 10.9762 5.94669 11.9844 5.94118C12.9926 5.94669 14.0008 6.07871 14.9435 6.3359C17.2521 4.72503 18.2467 5.05685 18.2467 5.05685C18.8775 6.69347 18.4827 7.95879 18.3629 8.25348C19.1144 9.04682 19.5713 10.0758 19.5713 11.3619C19.5713 15.9373 16.7296 16.9443 14.0525 17.2518C14.4917 17.6327 14.8775 18.3429 14.8775 19.4702V22.8628C14.8775 23.1563 15.0959 23.5025 15.7015 23.3853C20.4682 21.8005 23.9066 17.3023 23.9066 12C23.9066 5.37258 18.5341 0 12 0Z" />
+                      </svg>
+                  </a>
+                  <a href="https://www.linkedin.com/in/nikhilinturi/" style="color: #0A66C2; text-decoration: none;" class="text-gray-600 hover:text-gray-800" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M22.23 0H1.77C.792 0 0 .774 0 1.727V22.27C0 23.226.792 24 1.77 24H22.23C23.207 24 24 23.226 24 22.273V1.727C24 .774 23.207 0 22.23 0ZM7.059 20.452H3.573V9H7.059V20.452ZM5.316 7.466C4.151 7.466 3.209 6.512 3.209 5.34C3.209 4.167 4.151 3.214 5.316 3.214C6.477 3.214 7.42 4.167 7.42 5.34C7.42 6.512 6.477 7.466 5.316 7.466ZM20.452 20.452H16.965V14.826C16.965 13.503 16.939 11.814 15.115 11.814C13.267 11.814 13.004 13.238 13.004 14.733V20.452H9.518V9H12.873V10.513H12.921C13.369 9.674 14.465 8.783 16.001 8.783C19.416 8.783 20.452 10.958 20.452 14.104V20.452Z"/>
+                      </svg>
+                  </a>
+
+                  <!-- ORCID -->
+                  <a href="https://orcid.org/0009-0007-8688-6103" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+                      <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID iD" class="h-8 w-8 object-contain" viewBox="0 0 24 24" >
+                  </a>
+
+              </div>
+            </div>
+
+        </div>
+
+        <p class="text-lg leading-relaxed group relative hover:text-gray-900 mt-6 mb-6">
+          As a <strong class="group-hover:text-blue-500">Senior Data Scientist with over 7 years of experience</strong>, I specialize in building high-impact, AI-driven solutions for <strong class="group-hover:text-blue-500">genomics, multi-omics integration, and biomarker discovery</strong>. My expertise spans the full data science lifecycle, from <em class="group-hover:text-red-500">developing</em> <strong class="group-hover:text-blue-500">Advanced Machine Learning and Generative AI applications</strong> to <em class="group-hover:text-red-500">deploying</em> scalable, containerized workflows in cloud environments.
+        </p>
+        
+        <p class="text-lg leading-relaxed group relative hover:text-gray-900 mt-6 mb-6">
+          Ever since I was a kid, I’ve been captivated by two things: how <em class="group-hover:text-red-500">machines</em> work, and how <em class="group-hover:text-red-500">information</em> flows. That curiosity led me from building my first <strong class="group-hover:text-blue-500">“Hello World!”</strong> in Java to leading three amazing teams at <strong class="group-hover:text-blue-500">The University of Texas at Dallas</strong>, each tackling some of the most exciting challenges in <strong class="group-hover:text-blue-500">Science and AI</strong>.
+      
+          I’ve had the privilege of working with several distinguished researchers, including <em class="group-hover:text-red-500">Dr. Theodore J. Price</em>, <em class="group-hover:text-red-500">Dr. Diana F. Tavares</em>, and <em class="group-hover:text-red-500">Dr. Eric Christopher Meyers</em> at UTD, as well as collaborating with multiple labs across the globe. Before coming to the U.S., I spent 4.5 years in India's tech industry. At <strong class="group-hover:text-blue-500">Infosys Ltd.</strong>, I worked in consulting and development, notably for <strong class="group-hover:text-blue-500">BMW</strong> and the Infosys Research Unit. There, I honed my data science skills, developing enterprise applications and algorithms, and spearheading containerization efforts that dramatically improved deployment efficiency. Later, at <strong class="group-hover:text-blue-500">Aganitha</strong>, I worked as a Full-Stack Data Scientist on <em class="group-hover:text-red-500">AAV Capsid Engineering</em> 🧬, setting up the midstream and downstream analysis. I developed clustering models aimed at identifying optimal golden templates and predicting effective 7-mer sequences for blood-brain barrier transduction 🧠.
+        </p>
+        
+        <!-- What I do now -->
+        <div x-data="{ open: false }" class="mb-4 bg-white p-4 rounded shadow">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <strong class="text-lg">What I do now:</strong>
+              <!-- Down arrow when closed -->
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <!-- Up arrow when open -->
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-3 space-y-2 text-lg leading-relaxed">
+            <p>
+              I have the privilege of leading teams in <strong class="text-blue-500">Bioinformatics</strong>, <strong class="text-blue-500">Generative AI</strong>, and <strong class="text-blue-500">Machine Learning for vision models</strong>. Together, we’re pushing the boundaries of what’s possible in <strong class="text-blue-500">genomics</strong>, <strong class="text-blue-500">spatial transcriptomics</strong> (Visium, Xenium), and <strong class="text-blue-500">computational biology</strong>.
+            </p>
+            <ul class="list-disc pl-6">
+              <li><strong class="text-red-500">In bioinformatics</strong>, we’re making sense of massive NGS and spatial-omics datasets, accelerating biomarker discovery, and collaborating with researchers around the globe trying to decode pain.</li>
+              <li><strong class="text-red-500">In Generative AI</strong>, we build <strong class="text-blue-500">Agentic-RAG</strong> solutions that help scientists with literature reviews using the latest models. I love the magic of self-attention and autoregressive architectures—it’s like teaching a computer to read, reason, and synthesize knowledge from mountains of scientific literature.</li>
+              <li><strong class="text-red-500">In Machine Learning</strong>, my team builds classification (<strong class="text-blue-500">FastAI classification</strong>), object-detection (<strong class="text-blue-500">YOLO-v5, YOLO-v8</strong>), and segmentation (<strong class="text-blue-500">FastAI Segmentation, Detectron2, SAM, SAM2, Cellpose-SAM, Segment-AnyNeuron, StarDist, YOLO-v11, YOLO-v12</strong>) models that spot neurons and other cell types in high-res staining images, bringing new clarity to spatial biology and neuroscience.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- What drives me -->
+        <div x-data="{ open: false }" class="mb-4 bg-white p-4 rounded shadow">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <strong class="text-lg">What drives me:</strong>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-3 text-lg leading-relaxed">
+            <p>
+              I get a real thrill from translating messy, complex data—whether it’s gene sequences, images, or unstructured text—into insights that spark new discoveries. I’m hands-on with everything from <strong class="text-blue-500">Python and R</strong> to <strong class="text-blue-500">Docker, Nextflow</strong>, and <strong class="text-blue-500">cloud platforms</strong>, but what I enjoy most is mentoring others and building tools that make a difference for the explorers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Key Highlights -->
+        <div x-data="{ open: false }" class="mb-4 bg-white p-4 rounded shadow">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <strong class="text-lg">Key Highlights:</strong>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-3 list-disc pl-6 text-lg leading-relaxed">
+            <ul>
+              <li><strong class="text-blue-500">7+ years</strong> in Machine Learning, Generative AI, and Bioinformatics across academia and industry.</li>
+              <li><strong class="text-blue-500">Expert</strong> in NGS data analytics (scRNA-seq, ATAC-seq, spatial omics), multi-omics integration, and biomarker discovery.</li>
+              <li><strong class="text-blue-500">Advanced skills</strong> in Python, R, Nextflow, Docker, Kubernetes, and cloud (AWS, Azure).</li>
+              <li><strong class="text-blue-500">Developed and deployed</strong> RAG-based and multi-agent AI applications for research acceleration.</li>
+              <li><strong class="text-blue-500">Collaborated</strong> with researchers from McGill, UPenn, UQ-Australia, WashU, etc.</li>
+              <li><strong class="text-blue-500">Certified</strong> in AWS, Azure, and advanced AI/machine learning.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <p class="text-lg leading-relaxed group relative hover:text-gray-900 mt-6 mb-6">
+          If you’re passionate about the intersection of <strong class="group-hover:text-blue-500">AI, NLP, and life-sciences</strong> or just want to geek out about transformers and the future of data-driven discovery, let’s connect!
+        </p>
+
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+      
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const roles = [
+              'Gen AI Developer',
+              'ML Engineer',
+              'Data Scientist',
+              'Bioinformatician'
+            ];
+            new Typed('#typed-role', {
+              strings: roles,
+              typeSpeed: 150,
+              backSpeed: 100,
+              backDelay: 1200,
+              loop: true
+            });
+          });
+        </script>
+
+        <!-- adding JOP -->
+        <!-- <section id="featured-paper" class="p-3"></section>
+          <h3 class="text-2xl font-semibold mb-4 text-left">Featured Research 📖</h3>
+          <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="w-full md:w-3/4">
+              <strong class="text-xl block">Persistent changes in nociceptor translatomes govern hyperalgesic priming in mouse models</strong>
+              <em class="text-gray-600">Published: 8, August 2024</em>
+              <p class="mt-2 text-gray-700">
+                <span class="underline">TLDR</span>: Altered nociceptor translatomes are causative in producing hyperalgesic priming, and a functional role for these genes is confirmed, wherein a GPR88 agonist causes pain only in primed mice and established hyperalgesic priming is reversed by Meteorin.
+              </p>
+              <div class="mt-4 space-x-2">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/39149295/" target="_blank" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+                  Read More
+                </a>
+                <a href="misc/persistent_changes_in_the_dorsal_root_ganglion.811.pdf" download class="px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600">
+                  Download Paper
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/4 mt-4 md:mt-0 flex justify-center">
+              <img src="images/research-paper-thumbnail.jpg" alt="Paper Thumbnail" class="w-48 h-48 object-cover rounded-lg shadow-lg">
+            </div>
+          </div>
+        </section> -->
+
+    </div>
+  </section>
+
+
+  <!-- Experience -->
+  <section id="experience" class="mb-12">
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-3xl font-semibold mb-6">Work Experience 👨🏻‍💻</h2>
+
+
+    <!-- Position 1 -->
+    <div x-data="{ open: false }" class="mb-6 bg-white p-4 rounded shadow">
+      <button @click="open = !open" class="w-full text-left">
+        <div class="flex justify-between items-center">
+          <h3 class="text-xl font-semibold">Senior Data Scientist and Bioinformatician</h3>
+          <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+          <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+          </svg>
+        </div>
+      </button>
+      <p class="text-gray-600">
+        <a href="https://paincenter.utdallas.edu/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Center for Advanced Pain Studies, The University of Texas at Dallas</a><br />
+        <em>Feb 2023 – Present</em>
+      </p>
+
+      <div x-show="open" class="mt-2">
+        <p>
+          As a Senior Data Science and Bioinformatician at
+          <a href="https://paincenter.utdallas.edu/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Center for Advanced Pain Studies</a>
+          (<a href="https://paincenter.utdallas.edu/about/directors-welcome/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Dr. Price</a>,
+          <a href="https://labs.utdallas.edu/axonlab/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Dr. Tavares</a>, and
+          <a href="https://be.utdallas.edu/people/faculty/eric-meyers/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Dr. Meyers</a>), I had the opportunity to work on several pipelines and interact with some amazing researchers who are exemplars in the pain field. Here is a peek into my work here as an Intern here at Center for Advance Pain Studies (CAPS):
+        </p>
+
+        <ol class="list-decimal pl-5 space-y-2">
+          <br>
+          <li>Built an Agentic-RAG chatbot that ingests PubMed/bioRxiv/Nature abstracts, PDFs, and internal datasets, index files from NFS, S3 and Prometheus using adaptive contextual chunking and dense hybrid search; cut evidence-gathering time by 90% for 40+ scientists at CAPS.</li>
+          <li>Developed a multi-agent system on Azure AI Studio with 4 cooperative agents (crawl+research, reason, synthesize, publish) to surface pain-omics insights from DB tables, NFS file trees, and live web data; serves 2k queries a month with less than 200ms median latency.</li>
+          <li>Built a neuron‑detection pipeline using image segmentation (Detectron2 | YOLOv11 | FastAI | SAM) that raised F1‑score 0.78 → 0.89 (+15%) while slashing processing time 95%.</li>
+          <!-- <li>Deployed "Containerized Nextflow workflows" for <a href="https://github.com/utdal/Bulk-RNA-Seq-Nextflow-Pipeline" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Bulk RNA-sequencing</a>, scRNA‑seq, <a href="https://github.com/utdal/ATACSeq-NextFlow-Pipeline" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">ATAC-seq</a>, and spatial‑omics (<a href="https://github.com/utdal/Visium-NextFlow-Pipeline" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Visium</a> and <a href="https://github.com/unikill066/xenium_cell_segmentation" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Xenium</a>); scaled to 50+ sample sets on Kubernetes and accelerated biomarker discovery 60%.</li> -->
+          
+          <li>
+            Deployed "Containerized Nextflow workflows" for
+            <a href="https://github.com/utdal/Bulk-RNA-Seq-Nextflow-Pipeline" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Bulk RNA-sequencing</a>,
+            scRNA-seq,
+            <a href="https://github.com/utdal/ATACSeq-NextFlow-Pipeline" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">ATAC-seq</a>, and spatial-omics
+            (<a href="https://github.com/utdal/Visium-NextFlow-Pipeline" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Visium</a> and
+            <a href="https://github.com/unikill066/xenium_cell_segmentation" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Xenium</a>);
+            scaled to 50+ sample sets on Kubernetes and accelerated biomarker discovery 60%.
+
+            <!-- Repository Thumbnails -->
+            <div class="mt-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+              <div class="text-center">
+                <a href="https://github.com/utdal/Bulk-RNA-Seq-Nextflow-Pipeline" target="_blank" class="group">
+                  <img
+                    src="images/bulk.png"
+                    alt="Bulk RNA-Seq"
+                    class="w-full h-24 object-cover rounded-xl shadow-md ring-1 ring-gray-300
+                           group-hover:ring-2 group-hover:ring-blue-400 group-hover:shadow-lg
+                           transform group-hover:scale-105 transition-all duration-300"
+                  />
+                </a>
+                <a
+                  href="https://github.com/utdal/Bulk-RNA-Seq-Nextflow-Pipeline"
+                  target="_blank"
+                  class="block mt-1 text-xs text-blue-600 hover:underline"
+                >
+                  Bulk RNA-Seq
+                </a>
+              </div>
+            
+              <!-- ATAC-Seq -->
+              <div class="text-center">
+                <a href="https://github.com/utdal/ATACSeq-NextFlow-Pipeline" target="_blank" class="group">
+                  <img
+                    src="images/atac.png"
+                    alt="ATAC-Seq"
+                    class="w-full h-24 object-cover rounded-xl shadow-md ring-1 ring-gray-300
+                           group-hover:ring-2 group-hover:ring-blue-400 group-hover:shadow-lg
+                           transform group-hover:scale-105 transition-all duration-300"
+                  />
+                </a>
+                <a
+                  href="https://github.com/utdal/ATACSeq-NextFlow-Pipeline"
+                  target="_blank"
+                  class="block mt-1 text-xs text-blue-600 hover:underline"
+                >
+                  ATAC-Seq
+                </a>
+              </div>
+            
+              <!-- Visium -->
+              <div class="text-center">
+                <a href="https://github.com/utdal/Visium-NextFlow-Pipeline" target="_blank" class="group">
+                  <img
+                    src="images/viz.jpg"
+                    alt="Visium"
+                    class="w-full h-24 object-cover rounded-xl shadow-md ring-1 ring-gray-300
+                           group-hover:ring-2 group-hover:ring-blue-400 group-hover:shadow-lg
+                           transform group-hover:scale-105 transition-all duration-300"
+                  />
+                </a>
+                <a
+                  href="https://github.com/utdal/Visium-NextFlow-Pipeline"
+                  target="_blank"
+                  class="block mt-1 text-xs text-blue-600 hover:underline"
+                >
+                  Visium
+                </a>
+              </div>
+            
+              <!-- Xenium -->
+              <div class="text-center">
+                <a href="https://github.com/unikill066/xenium_cell_segmentation" target="_blank" class="group">
+                  <img
+                    src="images/xenium.png"
+                    alt="Xenium"
+                    class="w-full h-24 object-cover rounded-xl shadow-md ring-1 ring-gray-300
+                           group-hover:ring-2 group-hover:ring-blue-400 group-hover:shadow-lg
+                           transform group-hover:scale-105 transition-all duration-300"
+                  />
+                </a>
+                <a
+                  href="https://github.com/unikill066/xenium_cell_segmentation"
+                  target="_blank"
+                  class="block mt-1 text-xs text-blue-600 hover:underline"
+                >
+                  Xenium
+                </a>
+              </div>
+            
+              <!-- scRNA-Seq -->
+              <div class="text-center">
+                <a href="https://github.com/utdal/scRNA-seq-Nextflow-Pipeline" target="_blank" class="group">
+                  <img
+                    src="images/scrna.png"
+                    alt="scRNA-Seq"
+                    class="w-full h-24 object-cover rounded-xl shadow-md ring-1 ring-gray-300
+                           group-hover:ring-2 group-hover:ring-blue-400 group-hover:shadow-lg
+                           transform group-hover:scale-105 transition-all duration-300"
+                  />
+                </a>
+                <a
+                  href="https://github.com/utdal/scRNA-seq-Nextflow-Pipeline"
+                  target="_blank"
+                  class="block mt-1 text-xs text-blue-600 hover:underline"
+                >
+                  scRNA-Seq
+                </a>
+              </div>
+            </div>
+            <!-- End Thumbnails -->
+          </li>
+          
+          <li>Developed ensemble models for Vagus Nerve Simulation data (XGBoost, LightGBM, LSTM), achieving 93% accuracy / R²=0.92, in predicting the rat jaw-size.</li>
+          <li>Led 3 cross‑functional teams (15 scientists & 7 students) in image analysis, sequencing analytics, and bioinformatics; mentored 4 graduate RAs.</li>
+          <li>Spearheaded global collaborations (McGill, UPenn, WashU and Univ. of Queensland) standardizing NGS and Spatial Transcriptomic pipelines and cutting turn‑around from weeks‑to‑days.</li>
+        </ol>
+
+        <!-- ===== GitHub Repository Showcase ===== -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 my-8">
+          <!-- Multi-agent Research-RAG Chatbot -->
+          <div class="text-center">
+            <a href="https://github.com/unikill066/research_rag" target="_blank" class="group">
+              <img
+                src="images/mulrerag.png"
+                alt="Multi-agent RAG Chatbot"
+                class="w-full h-40 object-cover rounded-xl shadow-md ring-1 ring-gray-300
+                       group-hover:ring-2 group-hover:ring-blue-400 group-hover:shadow-lg
+                       transform group-hover:scale-105 transition-all duration-300"
+              />
+            </a>
+            <a
+              href="https://github.com/unikill066/research_rag"
+              target="_blank"
+              class="inline-block mt-2 text-sm text-blue-600 hover:underline"
+            >
+              Multi-agent Research-RAG Chatbot
+            </a>
+          </div>
+        
+          <!-- Agentic Grant Generator -->
+          <div class="text-center">
+            <a href="https://github.com/utdal/research_rag" target="_blank" class="group">
+              <img
+                src="images/agegran.png"
+                alt="Agentic Grant Generator"
+                class="w-full h-40 object-cover rounded-xl shadow-md ring-1 ring-gray-300
+                       group-hover:ring-2 group-hover:ring-blue-400 group-hover:shadow-lg
+                       transform group-hover:scale-105 transition-all duration-300"
+              />
+            </a>
+            <a
+              href="https://github.com/utdal/research_rag"
+              target="_blank"
+              class="inline-block mt-2 text-sm text-blue-600 hover:underline"
+            >
+              Agentic Grant Generator
+            </a>
+          </div>
+        </div>
+        <!-- ===== End Repository Showcase ===== -->
+
+        <div class="flex space-x-4 mt-4">
+          <a href="internship.html" class="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+            Spring 2024
+          </a>
+
+          <a href="https://www.linkedin.com/pulse/spring-2024-internship-experience-center-advanced-pain-inturi-qeksc/?trackingId=MJh9lJeUSxykCAG%2BTlN%2BBQ%3D%3D" class="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+            Spring 2024 +
+          </a>
+
+          <a href="https://www.linkedin.com/pulse/fall-2024-internship-center-advanced-pain-studiescaps-inturi-3sp2c/?trackingId=3iGcXeXGy0L0sa%2FWMrLhPA%3D%3D" class="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+            Fall 2024
+          </a>
+        </div>
+      </div>
+    </div>
+
+    
+
+
+
+
+    
+    
+      <!-- Position 1 -->
+      <!-- <div x-data="{ open: false }" class="mb-6">
+        <button @click="open = !open" class="w-full text-left">
+          <div class="flex justify-between items-center">
+            <h3 class="text-xl font-semibold">Data Science and Neuroinformatics Intern</h3>
+            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+            <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+            </svg>
+          </div>
+        </button>
+        <p class="text-gray-600">
+          <a href="https://paincenter.utdallas.edu/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Center for Advanced Pain Studies, The University of Texas at Dallas</a><br>
+          <em>Feb 2022 – Present</em>
+        </p>
+
+        <div x-show="open" class="mt-2">
+          <p>
+            As a Senior Data Science and Bioinformatician at
+            <a href="https://paincenter.utdallas.edu/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Center for Advanced Pain Studies</a>
+            (<a href="https://paincenter.utdallas.edu/about/directors-welcome/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Dr. Price</a>, <a href="https://labs.utdallas.edu/axonlab/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Dr. Tavares</a>, and <a href="https://be.utdallas.edu/people/faculty/eric-meyers/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Dr. Meyers</a>), I had the opportunity to work on several pipelines and interact with some amazing researchers who are exemplars in the pain field. Here is a peek into my work here as an Intern here at Center for Advance Pain Studies(CAPS):
+          </p>
+          <ol class="list-decimal pl-5 space-y-2">
+
+            <li>Built an Agentic-RAG chatbot that ingests PubMed/bioRxiv/Nature abstracts, PDFs, and internal datasets, index files from NFS, S3 and prometheus using adaptive contextual chunking and dense hybrid search; cut evidence-gathering time by 90% for 40+ scientists at CAPS.</li>
+            <li>Developed a multi-agent system on Azure AI Studio with 4 cooperative agents (crawl+research, reason, synthesize, publish) to surface pain-omics insights from DB tables, NFS file trees, and live web data; serves 2k queries a month with less than 200ms median latency.</li>
+            <li>Built an neuron‑detection pipeline using image segmentation (Detectron2 | YOLOv11 | FastAI | SAM) that raised F1‑score 0.78 → 0.89 (+15%) while slashing processing time 95%.</li>
+            <li>Deployed "Containerized Nextflow workflows" for <a href="https://github.com/utdal/Bulk-RNA-Seq-Nextflow-Pipeline" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline"> Bulk RNA-sequencing</a>, scRNA‑seq,  <a href="https://github.com/utdal/ATACSeq-NextFlow-Pipeline" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline"> ATAC-seq</a>, and spatial‑omics(<a href="https://github.com/utdal/Visium-NextFlow-Pipeline" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Visium</a> and <a href="https://github.com/unikill066/xenium_cell_segmentation" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Xenium</a>); scaled to 50+ samples sets on Kubernetes and accelerated biomarker discovery 60%.</li>
+            <li>Developed ensemble models for Vagus Nerve Simulation data (XGBoost, LightGBM, LSTM), achieving 93% accuracy / R²=0.92, in predicting the rat jaw-size.</li>
+            <li>Led 3 cross‑functional teams (15 scientists & 7 students) in image analysis, sequencing analytics, and bioinformatics; mentored 4 graduate RAs.</li>
+            <li>Spearheaded global collaborations (McGill, UPenn, WashU and Univ. of Queensland) standardizing NGS and Spatial Transcriptomic pipelines and cutting turn‑around from weeks-to-days.</li>
+          </ol>
+
+          <div class="flex space-x-4 mt-4">
+            <a href="internship.html" class="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Spring 2024
+            </a>
+          
+            <a href="https://www.linkedin.com/pulse/spring-2024-internship-experience-center-advanced-pain-inturi-qeksc/?trackingId=MJh9lJeUSxykCAG%2BTlN%2BBQ%3D%3D" class="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Spring 2024 +
+            </a>
+          
+            <a href="https://www.linkedin.com/pulse/fall-2024-internship-center-advanced-pain-studiescaps-inturi-3sp2c/?trackingId=3iGcXeXGy0L0sa%2FWMrLhPA%3D%3D" class="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Fall 2024
+            </a>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Position 2 -->
+      <div x-data="{ open: false }" class="mb-6 bg-white p-4 rounded shadow">
+        <button @click="open = !open" class="w-full text-left">
+          <div class="flex justify-between items-center">
+            <h3 class="text-xl font-semibold">Full-stack Data Scientist</h3>
+            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+            <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+            </svg>
+          </div>
+        </button>
+        <p class="text-gray-600">
+          <a href="https://www.aganitha.ai" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Aganitha Cognitive Solutions, Hyderabad, India</a><br>
+          <em>Jun 2022 – Dec 2022</em>
+        </p>
+        <div x-show="open" class="mt-2">
+          <ol class="list-decimal pl-5 space-y-2">
+            I predominantly worked on *in Silico* solutions related to Gene Therapy, Drug Discovery, etc. for industry-leading clients in Health Care and Biopharma. The work here at Aganitha requires a strong understanding of molecular bioinformatics, omics, and genomics. It's quite fascinating to learn about the human body and its metabolism, and I am looking forward to learning more.
+            <br>
+            <li>Developed and implemented advanced algorithms for the <a href="https://github.com/unikill066/BLAST-Search" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">AutoBLAST</a>, a genome browser, doubling efficiency compared to the <b>Basic Local Alignment Search Tool</b>.</li>
+            <li>Designed and executed <b>clustering models for the AAV Capsid Engineering Project to identify the golden templates</b>, significantly reducing the number of required in-vivo experiments by 99.96%, which led to substantial cost savings.</li>
+            <li>Developed interactive <b>ipython widgets and panel dashboards</b> for the <b>Midstream and Downstream Analysis</b> components of AAV Capsid Engineering, enhancing user engagement and data visualization capabilities.</li>
+            <li>Revamped <b>Splice-AI</b> algorithms to accurately detect and <b>analyze novel splice junctions in humans and rodents</b>, which resulted in a 20% increase in overall testing efficiency.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Position 3 -->
+      <div x-data="{ open: false }" class="mb-6 bg-white p-4 rounded shadow">
+        <button @click="open = !open" class="w-full text-left">
+          <div class="flex justify-between items-center">
+            <h3 class="text-xl font-semibold">Data Scientist</h3>
+            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+            <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+            </svg>
+          </div>
+        </button>
+        <p class="text-gray-600">
+          <a href="https://www.infosys.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Infosys Ltd, Hyderabad, India</a><br>
+          <em>Sep 2018 – Jun 2022</em>
+        </p>
+
+        <div x-show="open" class="mt-2">
+          <ol class="list-decimal pl-5 space-y-2">
+            During my tenure at Infosys and its research unit, Infosys ICETS, I undertook various responsibilities as mentioned below:
+            <br>
+            <li>Developed and implemented machine learning algorithms using a variety of packages such as <b>scikit-learn, LGBoost, CatBoost, H2O</b>, and <b>keras</b> to enhance the functionality of the <b>Infosys Data Science and Machine Learning Platform (IDSMLP)</b>, significantly expanding the scope of the tool.</li>
+            <li>Integrated advanced data visualization techniques into the IDSMLP tool interface by incorporating <b>univariate, bivariate, and multivariate interactive charts</b> using <b>Bokeh</b> and <b>Plotly</b>. Additionally, I established <b>load balancing with an Nginx server</b> to optimize user interactions and enhance the understanding of complex data patterns through interactive charts.</li>
+            <li>Streamlined deployment processes by <b>Dockerizing</b> all applications on the ICETS-Data Science platform, which reduced deployment times by 75% and significantly increased operational efficiency.</li>
+            <li>Developed and implemented a total of 40 database connectors for ICETS-Infosys, utilizing both <b>SQL and NoSQL</b> databases with Python, contributing to the development of valuable <b>internal intellectual property for ICETS(Infosys Center for Emerging Technology Solutions)</b>.</li>
+            </li>Created a user-friendly interface for the CFIN tool using Python, which streamlined communication and collaboration with the Infosys SAP Team.</li>
+            <li>Managed and maintained 55 repositories within the Enterprise Content Management software Documentum across Production, Integration, and Test environments; automated DAR/JAR deployments, enhancing deployment efficiency by a factor of 16.</li>
+          </ol>
+          <div class="mt-4 flex flex-col items-center">
+            <img src="images/insta_award.png" alt="Insta Award" class="w-96 h-auto object-contain">
+            <p class="mt-2 text-gray-700 text-sm text-center">Infosys RISE - Insta Award for Excellence</p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <!-- Publications -->
+  <section id="publications" class="mb-12">
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-3xl font-semibold mb-6">Publications 📚</h2>
+      <ul class="space-y-6">
+
+        <li x-data="{ open: false } " class="mb-6 bg-white p-4 rounded shadow">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>4E-BP1–dependent translation in microglia controls mechanical hypersensitivity in male and female mice</strong><br>
+                <em>2, June 2025</em>
+                <p><span class="underline">Authors</span>: Kevin C Lister, Calvin Wong, Weihua Cai, Sonali Uttam, Patricia Stecum, Rose Rodrigues, Mehdi Hooshmandi, Nicole Brown, Jonathan Fan, Noe Francois-Saint-Cyr, Shannon Tansley, Volodya Hovhannisyan, Diana Tavares-Ferreira, <strong>Nikhil Nageshwar Inturi</strong>, Khadijah Mazhar, Alain Pacis, Jieyi Yang, Alfredo Ribeiro-da-Silva, Christos G Gkogkas, Theodore J Price, Jeffrey S Mogil, Arkady Khoutorsky</p>
+              </div>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-2">
+            
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Spinal microglia play a pivotal role in the development of neuropathic pain. Peripheral nerve injury induces changes in the transcriptional profile of microglia, including increased expression of components of the translational machinery. Whether microglial protein synthesis is stimulated following nerve injury and has a functional role in mediating pain hypersensitivity is unknown. Here, we show that nascent protein synthesis is upregulated in spinal microglia following peripheral nerve injury in both male and female mice. Stimulating mRNA translation in microglia by selectively ablating the translational repressor eukaryotic initiation factor 4E–binding protein 1 (4E-BP1) promoted the transition of microglia to a reactive state and induced mechanical hypersensitivity in both sexes, whereas spontaneous pain was increased only in males. Conversely, inhibiting microglial translation by expressing a mutant form of 4E-BP1 in microglia attenuated their activation following peripheral nerve injury and alleviated neuropathic pain in both sexes. Thus, stimulating 4E-BP1–dependent translation promotes microglial reactivity and mechanical hypersensitivity, whereas inhibiting it alleviates neuropathic pain.
+            </p>
+            <a href="https://www.jci.org/articles/view/180190" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+          </div>
+        </li>
+
+        <li x-data="{ open: false } " class="mb-6 bg-white p-4 rounded shadow">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Expansion of OSMR expression and signaling in the human dorsal root ganglion links OSM to neuropathic pain</strong><br>
+                <em>1, April 2025</em>
+                <p><span class="underline">Authors</span>: Juliet M Mwirigi, Ishwarya Sankaranarayanan, Diana Tavares-Ferreira, Katherin A Gabriel, Seph Palomino, Yan Li, Megan L Uhelski, Stephanie Shiers, Úrzula Franco-Enzástiga, Andi Wangzhou, Joseph B Lesnak, Samhita Bandaru, Aishni Shrivastava, <strong>Nikhil Inturi</strong>, Phillip J Albrecht, Marilyn Dockum, Anna M Cervantes, Peter Horton, Geoffrey Funk, Robert Y North, Claudio Esteves Tatsui, German Corrales, Muhammad Saad Yousuf, Michele Curatolo, Robert W Gereau IV, Amol Patwardhan, Gregory Dussor, Patrick M Dougherty, Frank L Rice, Theodore J Price</p>
+              </div>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-2">
+            
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: RNA sequencing studies on human dorsal root ganglion (hDRG) from patients suffering from neuropathic pain show upregulation of OSM, linking this IL-6 family cytokine to pain disorders. In mice, however, OSM signaling causes itch behaviors through a direct effect on its cognate receptor expressed uniquely by pruriceptive sensory neurons. We hypothesized that an expansion in function of OSM-OSM receptor (OSMR) in sensory disorders in humans could be explained by species differences in receptor expression and signaling. Our in situ hybridization and immunohistochemical findings demonstrate broad expression of OSMR in DRG nociceptors and afferent fibers innervating the superficial and deep skin of humans. In patch-clamp electrophysiology, OSM directly activates human sensory neurons engaging MAPK signaling to promote action potential firing. Using CRISPR editing we show that OSM activation of MAPK signaling is dependent on OSMR and not LIFR in hDRG. Bulk, single-nuclei, and single-cell RNA-seq of OSM-treated hDRG cultures reveal expansive similarities in the transcriptomic signature observed in pain DRGs from neuropathic patients, indicating that OSM alone can orchestrate transcriptomic signatures associated with pain. We conclude that OSM-OSMR signaling via MAPKs is a critical signaling factor for DRG plasticity that may underlie neuropathic pain in patients.
+            </p>
+            <a href="https://www.biorxiv.org/content/10.1101/2025.03.26.645611v1.abstract" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+          </div>
+        </li>
+
+        <li x-data="{ open: false } " class="mb-6 bg-white p-4 rounded shadow">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Single-cell characterization of the human C2 dorsal root ganglion recovered from C1-2 arthrodesis surgery: implications for neck pain</strong><br>
+                <em>30, March 2025</em>
+                <p><span class="underline">Authors</span>: Asta Arendt-Tranholm, Ishwarya Sankaranarayanan, Cathryn Payne, Marisol Mancilla Moreno, Khadijah Mazhar, Natalie Yap, Abby P. Chiu, Allison Barry, Pooja P. Patel, <strong>Nikhil N. Inturi</strong>,  Diana Tavares Ferreira, Anubhav Amin, Mahesh Karandikar, Jeffrey G. Jarvik, Judith A. Turner, Christoph P. Hofstetter, Michele Curatolo,  Theodore J. Price</p>
+              </div>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-2">
+            
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Neurons in the dorsal root ganglion (DRG) receive and transmit sensory information from the tissues they innervate and from the external environment. Upper cervical (C1-C2) DRGs are functionally unique as they receive input from the neck, head, and occipital cranial dura, the latter two of which are also innervated by the trigeminal ganglion (TG). The C2 DRG also plays an important role in neck pain, a common and disabling disorder that is poorly understood. Advanced transcriptomic approaches have significantly improved our ability to characterize RNA expression patterns at single-cell resolution in the DRG and TG, but no previous studies have characterized the C2 DRG. Our aim was to use single-nucleus and spatial transcriptomic approaches to create a molecular map of C2 DRGs from patients undergoing arthrodesis surgery with ganglionectomy. Patients with acute (~3 months) or chronic (≥3 months) neck pain were enrolled and completed patient-reported outcomes and quantitative sensory testing prior to surgery. C2 DRGs were characterized with bulk, single nucleus, and spatial RNA sequencing technologies from 22 patients. Through a comparative analysis to published datasets of the lumbar DRG and TG, neuronal clusters identified in both TG and DRG were identified in the C2 DRG. Therefore, our study definitively characterizes the molecular composition of human C2 neurons and establishes their similarity with unique characteristics of subsets of TG neurons. We identified differentially expressed genes in endothelial, fibroblast and myelinating Schwann cells associated with chronic pain, including FGFBP2, C8orf34 and EFNA1 which have been identified in previous genome and transcriptome wide association studies (GWAS/TWAS). Our work establishes an atlas of the human C2 DRG and identifies altered gene expression patterns associated with chronic neck pain. This work establishes a foundation for the exploration of painful disorders in humans affecting the cervical spine.
+            </p>
+            <a href="https://www.biorxiv.org/content/10.1101/2025.03.24.645122v1.abstract" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+          </div>
+        </li>
+
+        <li x-data="{ open: false }" class="mb-6 bg-white p-4 rounded shadow">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Molecular architecture of human dermal sleeping nociceptors</strong><br>
+                <em>20, December 2024</em>
+                <p><span class="underline">Authors</span>: Jannis Körner, Derek Howard, Hans Jürgen Solinski, Marisol Mancilla Moreno, Natja Haag, Andrea Fiebig, Shamsuddin A. Bhuiyan, Idil Toklucu, Raya Bott, Ishwarya Sankaranarayanan, Diana Tavares-Ferreira, Stephanie Shiers, <b>Nikhil N. Inturi</b>, Anna Maxion, Lisa Ernst, Lorenzo Bonaguro, Jonas Schulte-Schrepping, Marc D. Beyer, Thomas Stiehl, William Renthal, Ingo Kurth, Theodore Price, Martin Schmelz, Barbara Namer, Shreejoy Tripathy, Angelika Lampert</p>
+              </div>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-2">
+            
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Human dermal sleeping nociceptors display ongoing activity in neuropathic pain, affecting 10% of the population. Despite advances in rodents, a molecular marker for these mechano-insensitive C-fibers (CMis) in human skin remains elusive, preventing targeted therapy. In this translational Patch-seq study, we combine single-cell transcriptomics following electrophysiological characterization with single-nucleus and spatial transcriptomics from pigs and humans. We functionally identified CMis in pig sensory neurons with patch-clamp using adapted protocols from human microneurography. We identified oncostatin-M-receptor (OSMR) and somatostatin (SST) as marker genes for CMis. Following dermal injection in healthy human volunteers, oncostatin-M, the ligand of OSMR, exclusively modulates CMis. We identified the entire molecular architecture of human dermal sleeping nociceptors, providing new therapeutic targets and the basis for a mechanistic understanding of neuropathic pain.
+            </p>
+            <a href="biorxiv.org/content/10.1101/2024.12.20.629638v1" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+          </div>
+        </li>
+
+        <li x-data="{ open: false } " class="mb-6 bg-white p-4 rounded shadow">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Translational control in the spinal cord regulates gene expression and pain hypersensitivity in the chronic phase of neuropathic pain</strong><br>
+                <em>18, September 2024</em>
+                <p><span class="underline">Authors</span>: Kevin C Lister, Calvin Wong, Sonali Uttam, Marc Parisien, Patricia Stecum, Nicole Brown, Weihua Cai, Mehdi Hooshmandi, Ning Gu, Mehdi Amiri, Francis Beaudry, Seyed Mehdi Jafarnejad, Diana Tavares-Ferreira, <b>Nikhil Nageshwar Inturi</b>, Khadijah Mazhar, Hien T Zhao, Bethany Fitzsimmons, Christos G Gkogkas, Nahum Sonenberg, Theodore J Price, Luda Diatchenko, Yaser Atlasi, Jeffrey S Mogil, Arkady Khoutorsky</p>
+              </div>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-2">
+            
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Sensitization of spinal nociceptive circuits plays a crucial role in neuropathic pain. This sensitization depends on new gene expression that is primarily regulated via transcriptional and translational control mechanisms. The relative roles of these mechanisms in regulating gene expression in the clinically relevant chronic phase of neuropathic pain are not well understood. Here, we show that changes in gene expression in the spinal cord during the chronic phase of neuropathic pain are substantially regulated at the translational level. Downregulating spinal translation at the chronic phase alleviated pain hypersensitivity. Cell-type-specific profiling revealed that spinal inhibitory neurons exhibited greater changes in translation after peripheral nerve injury compared to excitatory neurons. Notably, increasing translation selectively in all inhibitory neurons or parvalbumin-positive (PV+) interneurons, but not excitatory neurons, promoted mechanical pain hypersensitivity. Furthermore, increasing translation in PV+ neurons decreased their intrinsic excitability and spiking activity, whereas reducing translation in spinal PV+ neurons prevented the nerve injury-induced decrease in excitability. Thus, translational control mechanisms in the spinal cord, particularly in inhibitory neurons, play a role in mediating neuropathic pain hypersensitivity.
+            </p>
+            <a href="https://elifesciences.org/reviewed-preprints/100451" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+          </div>
+        </li>
+
+        <li x-data="{ open: false }" class="mb-6 bg-white p-4 rounded shadow">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Deciphering the molecular landscape of human peripheral nerves: implications for diabetic peripheral neuropathy</strong><br>
+                <em>16, July 2024</em>
+                <p><span class="underline">Authors</span>: Diana Tavares Ferreira, Breanna Q Shen, Juliet M Mwirigi, Stephanie Shiers, Ishwarya Sankaranarayanan, Miriam Kotamarti, <b>Nikhil N Inturi</b>, Khadijah Mazhar, Eroboghene E Ubogu, Geneva Thomas, Trapper Lalli, Dane Wukich, Theodore J Price</p>
+              </div>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-2">
+            
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Diabetic peripheral neuropathy (DPN) is a prevalent complication of diabetes mellitus that is caused by metabolic toxicity to peripheral axons. We aimed to gain deep mechanistic insight into the disease process using bulk and spatial RNA sequencing on tibial and sural nerves recovered from lower leg amputations in a mostly diabetic population. First, our approach comparing mixed sensory and motor tibial and purely sensory sural nerves shows key pathway differences in affected nerves, with distinct immunological features observed in sural nerves. Second, spatial transcriptomics analysis of sural nerves reveals substantial shifts in endothelial and immune cell types associated with severe axonal loss. We also find clear evidence of neuronal gene transcript changes, like PRPH, in nerves with axonal loss suggesting perturbed RNA transport into distal sensory axons. This motivated further investigation into neuronal mRNA localization in peripheral nerve axons generating clear evidence of robust localization of mRNAs such as SCN9A and TRPV1 in human sensory axons. Our work gives new insight into the altered cellular and transcriptomic profiles in human nerves in DPN and highlights the importance of sensory axon mRNA transport as an unappreciated potential contributor to peripheral nerve degeneration.
+            </p>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11195245/" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+          </div>
+        </li>
+
+        <li x-data="{ open: false }" class="mb-6 bg-white p-4 rounded shadow">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Epigenomic landscape of the human dorsal root ganglion: sex differences and transcriptional regulation of nociceptive genes</strong><br>
+                <em>10, July 2024</em>
+                <p><span class="underline">Authors</span>: Úrzula Franco-Enzástiga, <b>Nikhil N Inturi</b>, Keerthana Natarajan, Juliet M Mwirigi, Khadija Mazhar, Johannes C M Schlachetzki, Mark Schumacher, Theodore J Price</p>
+              </div>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-2">
+            
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Gene expression is influenced by chromatin architecture via controlled access of regulatory factors to DNA. To better understand gene regulation in the human dorsal root ganglion (hDRG) we used bulk and spatial transposase-accessible chromatin technology followed by sequencing (ATAC-seq). Using bulk ATAC-seq, we detected that in females diverse differentially accessible chromatin regions (DARs) mapped to the X chromosome and in males to autosomal genes. EGR1/3 and SP1/4 transcription factor binding motifs were abundant within DARs in females, and JUN, FOS and other AP-1 factors in males. To dissect the open chromatin profile in hDRG neurons, we used spatial ATAC-seq. The neuron cluster showed higher chromatin accessibility in GABAergic, glutamatergic, and interferon-related genes in females, and in Ca2+- signaling-related genes in males. Sex differences in transcription factor binding sites in neuron-proximal barcodes were consistent with the trends observed in bulk ATAC-seq data. We validated that EGR1 expression is biased to female hDRG compared to male. Strikingly, XIST, the long-noncoding RNA responsible for X inactivation, hybridization signal was found to be highly dispersed in the female neuronal but not non-neuronal nuclei suggesting weak X inactivation in female hDRG neurons. Our findings point to baseline epigenomic sex differences in the hDRG that likely underlie divergent transcriptional responses that determine <a href="https://sciencecast.org/casts/q7yc0okev3s2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">mechanistic sex differences</a> in pain.
+            </p>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/38586055/" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+          </div>
+        </li>
+        
+        <li x-data="{ open: false }" class="mb-6 bg-white p-4 rounded shadow">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Exploring the Single-Cell Transcriptome Landscape of the Human Dorsal Root Ganglion in Diabetic Peripheral Neuropathy</strong><br>
+                <em>26, April 2024</em>
+                <p><span class="underline">Authors</span>: Ishwarya Sankaranarayanan, Juliet M Mwirigi, <b>Nikhil Nageshwar Inturi</b>, Diana Tavares-Ferreira, Theodore J Price</p>
+              </div>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+          </button>
+          <div x-show="open" class="mt-2">
+            
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Diabetic Peripheral Neuropathy (DPN) stands out as a very common and clinically consequential complication of diabetes. DPN is characterized by nerve conduction impairment, dieback of nerve endings from the skin, spontaneous pain, and numbness in extremities. In this study, we conducted single-nucleus RNA sequencing on human dorsal root ganglion (DRG) tissues recovered from organ donors with a documented history of diabetes and neuropathic pain. Employing 10x Genomics technology, we performed single-nucleus RNA sequencing on eight human DRG samples each from individuals with DPN or healthy donors. Our primary objectives encompassed elucidating distinct populations of neurons and comprehending their transcriptomic variations between healthy and DPN DRGs. Additionally, we sought to characterize the diversity of transcriptomic changes in non-neuronal cells and explore their neuro-immune interactions in DPN. Our analysis revealed significant alterations in non-neuronal cell populations, including T cells, macrophages, and adipocytes within human DRG of DPN donors. Our work presents a comprehensive single-cell transcriptomic landscape of human DRGs in DPN donors, providing insights into molecular profile changes associated with DPN. The interactions between neuronal and non-neuronal cells could offer valuable insights into the underlying mechanisms of this condition, assisting in the development of novel therapeutics to alleviate DPN. Funded by National Institute of Health (U19 NS130608).
+            </p>
+            
+            <a href="https://www.jpain.org/article/S1526-5900(24)00135-4/abstract" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+          </div>
+        </li>
+
+        <!-- <li x-data="{ open: false }">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Persistent changes in nociceptor translatomes govern hyperalgesic priming in mouse models</strong><br>
+                <em>8, August 2024</em>
+                <p><span class="underline">Authors</span>: Ishwarya Sankaranarayanan, Moeno Kume, Ayaan Mohammed, Juliet M. Mwirigi, <b>Nikhil Nageshwar Inturi</b>, Gordon Munro, K. A. Petersen, Diana Tavares-Ferreira, Theodore J. Price</p>
+              </div>
+              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+            <p class="mt-2 text-gray-600">
+              <span class="underline">TLDR</span>: Altered nociceptor translatomes are causative in producing hyperalgesic priming, and a functional role for these genes is confirmed, wherein a GPR88 agonist causes pain only in primed mice and established hyperalgesic priming is reversed by Meteorin.
+            </p>
+          </button>
+          <div x-show="open" class="mt-2">
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Hyperalgesic priming is a model system that has been widely used to understand plasticity in painful stimulus-detecting sensory neurons, called nociceptors. A key feature of this model system is that following priming, stimuli that do not normally cause hyperalgesia now readily provoke this state. We hypothesized that hyperalgesic priming occurs due to reorganization of translation of mRNA in nociceptors. To test this hypothesis, we used paclitaxel treatment as the priming stimulus and translating ribosome affinity purification (TRAP) to measure persistent changes in mRNA translation in Nav1.8+ nociceptors. TRAP sequencing revealed 161 genes with persistently altered mRNA translation in the primed state. We identified Gpr88 as upregulated and Metrn as downregulated. We confirmed a functional role for these genes, wherein a GPR88 agonist causes pain only in primed mice and established hyperalgesic priming is reversed by Meteorin. Our work demonstrates that altered nociceptor translatomes are causative in producing hyperalgesic priming.
+            </p>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/39149295/" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+            <a href="https://journals.lww.com/pain/fulltext/9900/persistent_changes_in_the_dorsal_root_ganglion.811.aspx  " target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"></a>
+              The Journal of the International Assocation for the Study of Pain
+            </a>
+          </div>
+        </li> -->
+
+        <li x-data="{ open: false }" class="mb-6 bg-white p-4 rounded shadow">
+          <button @click="open = !open" class="w-full text-left">
+            <div class="flex justify-between items-center">
+              <div>
+                <strong>Persistent changes in nociceptor translatomes govern hyperalgesic priming in mouse models</strong><br>
+                <em>8, August 2024</em>
+                <p><span class="underline">Authors</span>: Ishwarya Sankaranarayanan, Moeno Kume, Ayaan Mohammed, Juliet M. Mwirigi, <b>Nikhil Nageshwar Inturi</b>, Gordon Munro, K. A. Petersen, Diana Tavares-Ferreira, Theodore J. Price</p>
+              </div>
+              <!-- Dropdown Arrow Icons -->
+              <svg x-show="!open" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+              <svg x-show="open" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+              </svg>
+            </div>
+            <p class="mt-2 text-gray-600">
+              <span class="underline">TLDR</span>: Altered nociceptor translatomes are causative in producing hyperalgesic priming, and a functional role for these genes is confirmed, wherein a GPR88 agonist causes pain only in primed mice and established hyperalgesic priming is reversed by Meteorin.
+            </p>
+          </button>
+          <div x-show="open" x-cloak class="mt-2">
+            <p class="mt-2 text-gray-600">
+              <span class="underline">Abstract</span>: Hyperalgesic priming is a model system that has been widely used to understand plasticity in painful stimulus-detecting sensory neurons, called nociceptors. A key feature of this model system is that following priming, stimuli that do not normally cause hyperalgesia now readily provoke this state. We hypothesized that hyperalgesic priming occurs due to reorganization of translation of mRNA in nociceptors. To test this hypothesis, we used paclitaxel treatment as the priming stimulus and translating ribosome affinity purification (TRAP) to measure persistent changes in mRNA translation in Nav1.8+ nociceptors. TRAP sequencing revealed 161 genes with persistently altered mRNA translation in the primed state. We identified Gpr88 as upregulated and Metrn as downregulated. We confirmed a functional role for these genes, wherein a GPR88 agonist causes pain only in primed mice and established hyperalgesic priming is reversed by Meteorin. Our work demonstrates that altered nociceptor translatomes are causative in producing hyperalgesic priming.
+            </p>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/39149295/" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              Show Publication
+            </a>
+            <a href="https://journals.lww.com/pain/fulltext/9900/persistent_changes_in_the_dorsal_root_ganglion.811.aspx" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              The Journal of the International Association for the Study of Pain
+            </a>
+            <a href="misc/persistent_changes_in_the_dorsal_root_ganglion.811.pdf" download class="mt-4 inline-block px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600">
+              Download Paper
+            </a>
+            
+          </div>
+        </li>
+        
+      </ul>
+      <div class="flex justify-center mt-6">
+        <a href="https://scholar.google.com/citations?user=9mU1K0cAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="px-6 py-3 border border-blue-200 rounded shadow-sm font-semibold text-white bg-gradient-to-r from-blue-500 via-purple-500 to-pink-400 hover:from-blue-600 hover:to-pink-500 transition-all duration-200">
+          Check upto date publications
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+  
+
+  <!-- Skills -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <section id="skills" class="mb-12">
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-3xl font-semibold mb-6">Skills Journey ⚒️</h2>
+      <div class="relative">
+        <div class="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-200"></div>
+
+        <div class="timeline-item mb-8 flex justify-between items-center w-full" x-data="{ open: false }">
+          <div class="order-1 w-5/12"></div>
+          <div class="z-20 flex items-center order-2 bg-indigo-500 shadow-xl w-8 h-8 rounded-full">
+            <span class="mx-auto text-white font-semibold">1</span>
+          </div>
+          <div
+            class="order-3 w-5/12 px-6 py-4 bg-indigo-100 rounded shadow cursor-pointer"
+            @click="open = !open"
+          >
+            <h3 class="mb-2 font-bold text-gray-800">Generative AI</h3>
+            <p class="text-gray-700">Langchain, Langgraph, crewAI, LangLarge Language Models (LLMs), Custom fine-tuning LLMs, Evals(DeepEval, LangSmith) Prompt Engineering(Meta prompting and prompt folding), Retrieval Augmented Generation(RAG), Agentic-RAG, HuggingFace smolagents, LLMOps, Attention Mechanisms, Diffusion Models, GANs (expand for more)</p>
+            <div x-show="open" x-transition class="mt-4 text-gray-600">
+              <p>Experience building and deploying generative AI solutions for text, voice and vision, image generation, including custom RAG pipelines and multi-agent systems.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item mb-8 flex justify-between items-center w-full" x-data="{ open: false }">
+          <div class="order-1 w-5/12 px-6 py-4 bg-blue-100 rounded shadow cursor-pointer"
+            @click="open = !open"
+          >
+            <h3 class="mb-2 font-bold text-gray-800">Machine Learning and AI</h3>
+            <p class="text-gray-700">Data Science, Machine Learning, Computer Vision and Deep Learning, Natural Language Processing: RNNs, LSTMs, BERT and BART, Transformers, Computer Vision models, Tensorflow, PyTorch, Keras, Folium, Plotly & Bokeh Visuvalization Tools</p>
+            <div x-show="open" x-transition class="mt-4 text-gray-600">
+              <p>Experienced in statistical analysis, data visualization, and predictive modeling.</p>
+            </div>
+          </div>
+          <div class="z-20 flex items-center order-2 bg-blue-500 shadow-xl w-8 h-8 rounded-full">
+            <span class="mx-auto text-white font-semibold">2</span>
+          </div>
+          <div class="order-3 w-5/12"></div>
+        </div>
+        
+        <div class="timeline-item mb-8 flex justify-between items-center w-full" x-data="{ open: false }">
+          <div class="order-1 w-5/12"></div>
+          <div class="z-20 flex items-center order-2 bg-green-500 shadow-xl w-8 h-8 rounded-full">
+            <span class="mx-auto text-white font-semibold">3</span>
+          </div>
+          <div
+            class="order-3 w-5/12 px-6 py-4 bg-green-100 rounded shadow cursor-pointer"
+            @click="open = !open"
+          >
+            <h3 class="mb-2 font-bold text-gray-800">Programming</h3>
+            <p class="text-gray-700">Python, R-programming, Shell Scripting, Java, SQL, NoSQL, DQL, Javascript, HTML, CSS</p>
+            <div x-show="open" x-transition class="mt-4 text-gray-600">
+              <p>Proficient in developing scalable applications, application endpoints, load-balancing(Nginx) and automating workflows.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item mb-8 flex justify-between items-center w-full" x-data="{ open: false }">
+          <div
+            class="order-1 w-5/12 px-6 py-4 bg-yellow-100 rounded shadow cursor-pointer"
+            @click="open = !open"
+          >
+            <h3 class="mb-2 font-bold text-gray-800">Tools & Technologies</h3>
+            <p class="text-gray-700">Cloud Computing: Azure(Certified) and AWS(Certified), Docker, Kubernetes, Cromwell, Nextflow, Nginx, CI/CD Pipelines, Documentum (ECM Software), Agile Certified Practitioner</p>
+            <div x-show="open" x-transition class="mt-4 text-gray-600">
+              <p>Experienced in versioning of ML models, tackling model and data drifts, deployments, containerization, orchestration, and workflow management.</p>
+            </div>
+          </div>
+          <div class="z-20 flex items-center order-2 bg-yellow-500 shadow-xl w-8 h-8 rounded-full">
+            <span class="mx-auto text-white font-semibold">4</span>
+          </div>
+          <div class="order-3 w-5/12"></div>
+        </div>
+        
+        <div class="timeline-item mb-8 flex justify-between items-center w-full" x-data="{ open: false }">
+          <div class="order-1 w-5/12"></div>
+          <div class="z-20 flex items-center order-2 bg-red-500 shadow-xl w-8 h-8 rounded-full">
+            <span class="mx-auto text-white font-semibold">5</span>
+          </div>
+          <div
+            class="order-3 w-5/12 px-6 py-4 bg-red-100 rounded shadow cursor-pointer"
+            @click="open = !open"
+          >
+            <h3 class="mb-2 font-bold text-gray-800">Web Servers</h3>
+            <p class="text-gray-700">Tornado, Django, Flask</p>
+            <div x-show="open" x-transition class="mt-4 text-gray-600">
+              <p>Skilled in building and deploying web applications and APIs.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item mb-8 flex justify-between items-center w-full" x-data="{ open: false }">
+          <div
+            class="order-1 w-5/12 px-6 py-4 bg-purple-100 rounded shadow cursor-pointer"
+            @click="open = !open"
+          >
+            <h3 class="mb-2 font-bold text-gray-800">Other Skills</h3>
+            <p class="text-gray-700">Bioinformatics, Omics, Genomics, Transcriptomics, Bulk RNA-sequemcing Analysis (DE Genes), Visium Analysis(Spatial Transcriptomics Data), ATAC-sequencing, Single-cell Analysis, AAV Capsid Engineering</p>
+            <div x-show="open" x-transition class="mt-4 text-gray-600">
+              <p>Experienced in Bioinformatics and Neuroinformatics Analysis.</p>
+            </div>
+          </div>
+          <div class="z-20 flex items-center order-2 bg-purple-500 shadow-xl w-8 h-8 rounded-full">
+            <span class="mx-auto text-white font-semibold">6</span>
+          </div>
+          <div class="order-3 w-5/12"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Projects -->
+  <section id="projects" x-data="{ open: false, filter:'all' }" x-effect="if (filter !== 'all') open = true" class="mb-12">
+
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-3xl font-semibold mb-6">Projects 📁</h2>
+      
+      <div class="flex gap-2 mb-6">
+        <template x-for="cat in ['all','genai','bio']" :key="cat">
+          <button
+            @click="filter = cat"
+            :class="{
+              'bg-blue-600 text-white': filter === cat,
+              'bg-gray-100 text-gray-700 hover:bg-gray-200': filter !== cat
+            }"
+            class="px-3 py-1 rounded-md text-sm font-medium transition">
+            <span x-text="cat === 'all' ? 'All' :
+                          cat === 'genai' ? 'Data / ML / Gen-AI / Tech' :
+                          'Bioinformatics / Neuroinformatics'"></span>
+          </button>
+        </template>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+
+        <!-- AI Travel Agent Card -->
+        <div 
+            x-data="{ open: false }" 
+            data-cat="genai" 
+            x-show="true" 
+            class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
+        >
+            <!-- Cover image with hover trigger -->
+            <div 
+                class="relative h-48 overflow-hidden cursor-pointer"
+                @mouseenter="open = true"
+            >
+                <img 
+                    src="images/ai_trav.png"
+                    alt="AI Travel Agent Demo"
+                    class="h-48 w-full object-cover transition-transform duration-300 hover:scale-105"
+                >
+                <!-- Overlay indicator -->
+                <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                    <span class="text-white opacity-0 hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
+                        Click to try demo
+                    </span>
+                </div>
+            </div>
+
+            <!-- Content wrapper -->
+            <div class="p-4 flex flex-col flex-1">
+                <h3 class="text-lg font-semibold mb-2">
+                    AI Powered Travel Agent using LangChain
+                </h3>
+
+                <p class="text-sm text-gray-600 mb-4 flex-1">
+                    An AI‑powered travel planner that auto‑generates day‑by‑day itineraries, budget breakdowns, and live weather forecasts—accessible via both a CLI and an interactive Streamlit web app.
+                </p>
+
+                <!-- Action row pinned to the bottom -->
+                <div class="mt-auto flex justify-between items-center">
+                    <a href="https://github.com/unikill066/Travel_Agent_LangChain"
+                        target="_blank"
+                        class="text-blue-600 font-medium hover:underline">
+                        View on GitHub →
+                    </a>
+
+                    <a href="https://huggingface.co/spaces/unikill066/AI-Travel-Agent-Langchain"
+                        target="_blank"
+                        class="text-blue-600 font-medium hover:underline">
+                        Live Demo →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Full-screen overlay -->
+            <div
+                x-show="open"
+                x-cloak
+                x-transition.opacity.duration.300ms
+                class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
+                @click.self="open = false"
+            >
+                <!-- Inner container with mouseleave to close -->
+                <div
+                    class="relative bg-white rounded-lg shadow-xl w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 h-4/5 overflow-hidden"
+                    @mouseleave="open = false"
+                >
+                    <!-- Close button -->
+                    <button
+                        @click="open = false"
+                        class="absolute top-4 right-4 z-10 text-gray-500 hover:text-gray-700 text-2xl font-bold bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md transition-colors duration-200"
+                        title="Close"
+                    >
+                        ×
+                    </button>
+
+                    <!-- Embedded iframe -->
+                    <iframe
+                        src="https://unikill066-ai-travel-agent-langchain.hf.space?embed=true"
+                        frameborder="0"
+                        class="w-full h-full"
+                        title="AI Travel Agent Demo"
+                        sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div
+        x-data="{ open: false }"
+        data-cat="genai"
+        x-show="filter==='all' || filter===$el.dataset.cat"
+        class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
+        >
+        <!-- Cover image with hover trigger -->
+        <div
+          class="relative h-48 overflow-hidden cursor-pointer"
+          @mouseenter="open = true"
+        >
+          <img
+            src="images/proj1.png"
+            alt="Screenshot of Image Generator using FLUX"
+            class="h-48 w-full object-cover transition-transform duration-300 hover:scale-105"
+          >
+          <!-- Overlay indicator -->
+          <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+            <span class="text-white opacity-0 hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
+              Click to try demo
+            </span>
+          </div>
+        </div>
+
+        <!-- Content wrapper -->
+        <div class="p-4 flex flex-col flex-1">
+          <h3 class="text-lg font-semibold mb-2">
+            Image Generator using FLUX
+          </h3>
+
+          <p class="text-sm text-gray-600 mb-4 flex-1">
+            FLUX-image-generator is an AI-powered image generation tool that
+            utilizes the Flux framework and Gemini API to create personalized
+            images from user prompts.
+          </p>
+
+          <!-- Action row pinned to the bottom -->
+          <div class="mt-auto flex justify-between items-center">
+            <a
+              href="https://github.com/unikill066/FLUX-image-generator"
+              target="_blank"
+              class="text-blue-600 font-medium hover:underline"
+            >
+              View on GitHub →
+            </a>
+
+            <a
+              href="https://huggingface.co/spaces/unikill066/Flux-image-generator"
+              target="_blank"
+              class="text-blue-600 font-medium hover:underline"
+            >
+              Live Demo →
+            </a>
+          </div>
+        </div>
+
+        <!-- Full-screen overlay -->
+        <div
+          x-show="open"
+          x-cloak
+          x-transition.opacity.duration.300ms
+          class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
+          @click.self="open = false"
+        >
+          <div
+            class="relative bg-white rounded-lg shadow-xl w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 h-4/5 overflow-hidden"
+            @mouseleave="open = false"
+          >
+            <!-- Close button -->
+            <button
+              @click="open = false"
+              class="absolute top-4 right-4 z-10 text-gray-500 hover:text-gray-700 text-2xl font-bold bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md transition-colors duration-200"
+              title="Close"
+            >
+              ×
+            </button>
+
+            <!-- Embedded iframe -->
+            <iframe
+              src="https://unikill066-flux-image-generator.hf.space?embed=true"
+              frameborder="0"
+              class="w-full h-full"
+              title="FLUX Image Generator Demo"
+              sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+            ></iframe>
+          </div>
+        </div>
+        </div>
+
+
+        <!-- Project Card 3 -->
+        <div
+        x-data="{ open: false }"
+        data-cat="genai"
+        x-show="filter==='all' || filter===$el.dataset.cat"
+        class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
+        >
+        <!-- Cover image with hover trigger -->
+        <div
+          class="relative h-48 overflow-hidden cursor-pointer"
+          @mouseenter="open = true"
+        >
+          <img
+            src="images/NikhilRAG_demo.gif"
+            alt="Demo GIF of NikhilRAG"
+            class="h-48 w-full object-cover transition-transform duration-300 hover:scale-105"
+          >
+          <!-- Overlay indicator -->
+          <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+            <span class="text-white opacity-0 hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
+              Click to try demo
+            </span>
+          </div>
+        </div>
+
+        <!-- Content wrapper -->
+        <div class="p-4 flex flex-col flex-1">
+          <h3 class="text-lg font-semibold mb-2">
+            NikhilRAG
+          </h3>
+
+          <p class="text-sm text-gray-600 mb-4 flex-1">
+            NikhilRAG is an AI-powered RAG Chatbot that dynamically synthesizes my
+            professional journey, projects, and skills. Powered by GPT-LangChain and Streamlit.
+          </p>
+
+          <!-- Action row pinned to the bottom -->
+          <div class="mt-auto flex justify-between items-center">
+            <a
+              href="https://github.com/unikill066/NikhilRAG"
+              target="_blank"
+              class="text-blue-600 font-medium hover:underline"
+            >
+              View on GitHub →
+            </a>
+
+            <a
+              href="https://huggingface.co/spaces/unikill066/NikhilRAG"
+              target="_blank"
+              class="text-blue-600 font-medium hover:underline"
+            >
+              Live Demo →
+            </a>
+          </div>
+        </div>
+
+        <!-- Full-screen overlay -->
+        <div
+          x-show="open"
+          x-cloak
+          x-transition.opacity.duration.300ms
+          class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
+          @click.self="open = false"
+        >
+          <div
+            class="relative bg-white rounded-lg shadow-xl w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 h-4/5 overflow-hidden"
+            @mouseleave="open = false"
+          >
+            <!-- Close button -->
+            <button
+              @click="open = false"
+              class="absolute top-4 right-4 z-10 text-gray-500 hover:text-gray-700 text-2xl font-bold bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md transition-colors duration-200"
+              title="Close"
+            >
+              ×
+            </button>
+
+            <!-- Embedded iframe -->
+            <iframe
+              src="https://unikill066-nikhilrag.hf.space?embed=true"
+              frameborder="0"
+              class="w-full h-full"
+              title="NikhilRAG Demo"
+              sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+            ></iframe>
+          </div>
+        </div>
+        </div>
+
+
+
+        <!-- Project Card 1 -->
+        <!-- <div data-cat="bio" x-show="filter==='all' || filter===$el.dataset.cat" class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl
+            transition-shadow duration-300 flex flex-col"> -->
+        <div data-cat="bio" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <img src="images/xen1.png"
+              alt="Screenshot of Xenium Cell Segmentation Pipeline"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">
+              Xenium Cell Segmentation Pipeline
+            </h3>
+
+            <p class="text-sm text-gray-600 mb-4">
+              End-to-end pipeline for spinal-cord microscopy segmentation with
+              Cellpose, tiling, and mask stitching.
+            </p>
+            <div class="mt-auto flex justify-between items-center">
+              <a href="https://github.com/unikill066/xenium_cell_segmentation"
+                target="_blank"
+                class="text-blue-600 font-medium hover:underline">
+                View on GitHub →
+              </a>
+              <a href="https://huggingface.co/spaces/unikill066/xenium_cell_segmentation"
+                target="_blank"
+                class="text-blue-600 font-medium hover:underline">
+                Live Demo →
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Project Card 4 -->
+        <div 
+          data-cat="genai" x-show="open && (filter==='all'||filter===$el.dataset.cat)"
+          x-cloak
+          class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl
+                transition-shadow duration-300 flex flex-col"
+        >
+          <!-- cover image -->
+          <img src="images/agenticRAG.gif"
+              alt="Screenshot of Agentic RAG"
+              class="h-48 w-full object-cover">
+
+          <!-- content wrapper -->
+          <div class="p-4 flex flex-col flex-1">
+
+            <h3 class="text-lg font-semibold mb-2">
+              Agentic&nbsp;(RAG) Retrieval Augmented Generation
+            </h3>
+
+            <p class="text-sm text-gray-600 mb-4">
+              This isn't just another RAG implementation&mdash;it's an
+              agentic system that intelligently decides when and how to
+              retrieve information.
+            </p>
+
+            <!-- action row pinned to the bottom -->
+            <div class="mt-auto flex justify-between items-center">
+              <a href="https://github.com/unikill066/agentic-rag"
+                target="_blank"
+                class="text-blue-600 font-medium hover:underline">
+                View on GitHub →
+              </a>
+
+              <a href="https://huggingface.co/spaces/unikill066/agentic-rag-nik"
+                target="_blank"
+                class="text-blue-600 font-medium hover:underline">
+                Live Demo →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 5 -->
+        <div data-cat="genai" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+        <!-- <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"> -->
+          <img src="images/sage-k.png"
+              alt="Screenshot of Project Two"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">S.A.G.E - Strategic Analysis & Guidance Engine</h3>
+            <p class="text-sm text-gray-600 mb-4">SAGE is an AI-powered strategist, researcher, and builder all rolled into one. It is a swarm of 13 crews, decoupled for processing Human-in-the-loop requests and versioning runs.</p>
+            <a href="https://github.com/unikill066/sage_provoke"
+              class="mt-auto text-blue-600 font-medium hover:underline">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- Project Card 6 -->
+        <div data-cat="genai" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <img src="images/smart-ats.png"
+              alt="Screenshot of Project Two"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">Smart ATS Resume crewAI multi-agent system</h3>
+            <p class="text-sm text-gray-600 mb-4">An AI-powered resume tailoring system that automatically optimizes your resume for specific job posting.</p>
+            <a href="https://github.com/unikill066/smart-agentic-ats-resume"
+              class="mt-auto text-blue-600 font-medium hover:underline">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- Project Card 7 -->
+        <div data-cat="genai" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <img src="images/researchrag.png"
+              alt="Screenshot of Project Two"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">Multi-agent Research RAG</h3>
+            <p class="text-sm text-gray-600 mb-4">A multi-agent chatbot combining Retrieval-Augmented Generation (RAG) with live internet search for concise, up-to-date answers.</p>
+            <a href="https://github.com/unikill066/research_rag"
+              class="mt-auto text-blue-600 font-medium hover:underline">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- Project Card 8 -->
+        <div data-cat="genai" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <img src="images/toolrun.png"
+              alt="Screenshot of Project Two"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">RAG Web-Scraper Chatbot using Ollama(local)</h3>
+            <p class="text-sm text-gray-600 mb-4">A powerful web crawler chatbot that extracts, indexes, and intelligently answers questions on web content using Selenium, LangChain, and Ollama's LLM.</p>
+            <a href="https://github.com/unikill066/RAG-Web-Scraper-Ollama-LangChain"
+              class="mt-auto text-blue-600 font-medium hover:underline">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- Project Card 9 -->
+        <div data-cat="genai" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <img src="images/screen_rec.gif"
+              alt="Screenshot of Project Two"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">Spotify Wrapped Unwrapped</h3>
+            <p class="text-sm text-gray-600 mb-4">Spotify Unwrapped — A Streamlit web app that connects to your Spotify account, visualizes your top tracks & artists, and delivers GPT-powered lyrical, emotional, and psychological insights into your listening habits.</p>
+            <a href="https://github.com/unikill066/spotify_wrapped_wrapped"
+              class="mt-auto text-blue-600 font-medium hover:underline">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- Project Card 10 -->
+        <div data-cat="genai" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+        <!-- cover image -->
+        <img src="images/yt.png"
+            alt="Screenshot of YouTube CrewAI Scraper &amp; Mapper"
+            class="h-48 w-full object-cover">
+
+        <!-- content wrapper -->
+        <div class="p-4 flex flex-col flex-1">
+
+          <h3 class="text-lg font-semibold mb-2">
+            YouTube CrewAI Scraper &amp; Mapper&nbsp;(Agentic scraper for YouTube videos)
+          </h3>
+
+          <p class="text-sm text-gray-600 mb-4">
+            A Python tool that uses crewAI to scrape YouTube channel data and
+            visualizes it geographically with interactive maps.
+          </p>
+
+            <!-- action row pinned to the bottom -->
+            <div class="mt-auto flex justify-between items-center">
+              <a href="https://github.com/unikill066/youtube_crewAI_scraper_mapper"
+                target="_blank"
+                class="text-blue-600 font-medium hover:underline">
+                View on GitHub →
+              </a>
+
+              <a href="https://unikill066.github.io/youtube_crewAI_scraper_mapper/"
+                target="_blank"
+                class="text-blue-600 font-medium hover:underline">
+                Live Demo →
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Project Card 11 -->
+        <div data-cat="genai" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <img src="images/agg.png"
+              alt="Screenshot of Project Two"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">Agentic Grant Generator</h3>
+            <p class="text-sm text-gray-600 mb-4">Smart Agentic Grant Generator that pilots a draft version of grants.</p>
+            <a href="https://github.com/unikill066/agentic_grant_generator"
+              class="mt-auto text-blue-600 font-medium hover:underline">View on GitHub →</a>
+          </div>
+        </div>
+
+
+        <!-- Project Card 12 -->
+        <div data-cat="bio" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <img src="images/hande.png"
+              alt="Screenshot of Project Two"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">Normalize H&E images for 10X-Visium workflows</h3>
+            <p class="text-sm text-gray-600 mb-4">A method to normalize H and E images for Image Processing and Quantitative Testing, this is referenced from a <a href="https://www.cs.unc.edu/~mn/sites/default/files/macenko2009.pdf" class="text-blue-600 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer">paper</a>.</p>
+            <a href="https://github.com/unikill066/agentic_grant_generator"
+              class="mt-auto text-blue-600 font-medium hover:underline">View on GitHub →</a>
+          </div>
+        </div>
+
+
+        <!-- Project Card 13 -->
+        <div data-cat="bio" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <img src="images/trap.png"
+              alt="Screenshot of Project Two"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">TRAP Analysis Tool</h3>
+            <p class="text-sm text-gray-600 mb-4">TRAP-Analysis tool enables the investigation of cell-specific mRNA associations with ribosomes obtained from Translating Ribosome Affinity Purification (TRAP) sequencing.</p>
+            <a href="https://github.com/utdal/TRAP-Analysis"
+              class="mt-auto text-blue-600 font-medium hover:underline">View on GitHub →</a>
+          </div>
+        </div>
+
+
+        <!-- Project Card 14 -->
+        <div data-cat="bio" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <img src="images/eucl.png"
+              alt="Screenshot of Project Two"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">Visium Distance Plotting Tool (Euclidian Distances)</h3>
+            <p class="text-sm text-gray-600 mb-4">The Visium Distance Plotting Tool is a python-based application that offers a range of interactive plots for analyzing visium single-cell data(e.g. csv files).</p>
+            <a href="https://github.com/utdal/visium_distance_plotting_tool"
+              class="mt-auto text-blue-600 font-medium hover:underline">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- Project Card 15 -->
+        <div data-cat="bio" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <img src="images/viz1.png"
+              alt="Screenshot of Project Two"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">Visium Spatial Analysis</h3>
+            <p class="text-sm text-gray-600 mb-4">Visium Spatial Gene Expression is a next-generation molecular profiling solution for classifying tissue based on total mRNA. The steps involved in classifying the Spatial Gene Expression is done in this tool using python and R.</p>
+            <a href="https://github.com/utdal/visium_spatial_analysis_tool"
+              class="mt-auto text-blue-600 font-medium hover:underline">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- Project Card 16 -->
+        <div data-cat="bio" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <img src="images/vixnf.png"
+              alt="Screenshot of Project Two"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">Visium Spatial Analysis using NextFlow</h3>
+            <p class="text-sm text-gray-600 mb-4">This is an automated workflow pipeline for analyzing Visium data, implemented in Python, R, and Shell scripts, and wrapped in a NextFlow workflow.</p>
+            <a href="https://github.com/utdal/Visium-NextFlow-Pipeline"
+              class="mt-auto text-blue-600 font-medium hover:underline">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- Project Card 17 -->
+        <div data-cat="bio" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <img src="images/atac.png"
+              alt="Screenshot of Project Two"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">ATACSeq Data Processing Pipeline using NextFlow</h3>
+            <p class="text-sm text-gray-600 mb-4">This is an automated workflow pipeline for analyzing bulk ATAC-seq data, implemented primarily in bash scripts, and wrapped in a NextFlow workflow.</p>
+            <a href="https://github.com/utdal/ATACSeq-NextFlow-Pipeline"
+              class="mt-auto text-blue-600 font-medium hover:underline">View on GitHub →</a>
+          </div>
+        </div>
+
+
+        <!-- Project Card 18 -->
+        <div data-cat="bio" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <img src="images/bulk.png"
+              alt="Screenshot of Project Two"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">Bulk-RNA Seq Data Processing Pipeline using NextFlow / Docker</h3>
+            <p class="text-sm text-gray-600 mb-4">This is an automated workflow pipeline for analyzing and processing Bulk-RNA seq data, implemented primarily in bash, python and R, and wrapped in a NextFlow workflow to characterize the gene landscape in the samples.</p>
+            <a href="https://github.com/utdal/Bulk-RNA-Seq-Nextflow-Pipeline"
+              class="mt-auto text-blue-600 font-medium hover:underline">View on GitHub →</a>
+          </div>
+        </div>
+
+
+        <!-- Project Card 19 -->
+        <div data-cat="bio" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <img src="images/visja.png"
+              alt="Screenshot of Project Two"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">Analysis Pipeline for Visium 10x Data [visium10x-spatial-transcriptomics-pipeline]</h3>
+            <p class="text-sm text-gray-600 mb-4">This repository provides an R-based pipeline for analyzing spatial RNA-seq data using Seurat, STDeconvolve, and Giotto. Designed to process and analyze spatial transcriptomics data through a sequence of well-defined steps, enabling in-depth exploration and interpretation of spatially resolved gene expression profiles.</p>
+            <a href="https://github.com/utdal/visium10x-spatial-transcriptomics-pipeline"
+              class="mt-auto text-blue-600 font-medium hover:underline">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- Project Card 20 -->
+        <div data-cat="bio" x-show="open && (filter==='all'||filter===$el.dataset.cat)" x-cloak class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+          <img src="images/xenyl.png"
+              alt="Screenshot of Project Two"
+              class="h-48 w-full object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">Xenium Cell Segmentation using YOLO-v11</h3>
+            <p class="text-sm text-gray-600 mb-4">Cell segmentation - xenium data: human spinal cord, hDRG samples.</p>
+            <a href="https://github.com/utdal/xenium_cell_segmentation"
+              class="mt-auto text-blue-600 font-medium hover:underline">View on GitHub →</a>
+          </div>
+        </div>
+
+      </div> <!-- end of .grid -->
+      <div class="flex justify-center mt-6">
+        <button
+          @click="open = !open"
+          class="px-6 py-3 border border-blue-200 rounded shadow-sm font-semibold text-white bg-gradient-to-r from-blue-500 via-purple-500 to-pink-400 hover:from-blue-600 hover:to-pink-500 transition-all duration-200"
+        >
+          <span x-text="open ? 'Show Less' : 'Show More'"></span>
+        </button>
+      </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="mb-12">
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-3xl font-semibold mb-6">Education 🎓</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-semibold">
+            <a href="https://www.utdallas.edu/fact-sheets/jsom/ms-business-analytics-and-artificial-intelligence/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+              The University of Texas at Dallas
+            </a>
+          </h3>
+          <p class="text-gray-600">Master's in Business Analytics and Artificial Intelligence</p>
+          <p class="text-gray-500"><em>Jan 2023 - Present</em></p>
+          <div class="flex justify-start gap-4 mt-4">
+            <a href="javascript:void(0);" onclick="openModal('images/cert_appr.jpeg')">
+              <img src="images/cert_appr.jpeg" alt="Image 1 description" class="w-48 h-32 object-cover border-2 border-gray-350 rounded-lg">
+            </a>
+            <a href="javascript:void(0);" onclick="openModal('images/high_dist.png')">
+              <img src="images/high_dist.png" alt="Image 2 description" class="w-48 h-32 object-cover border-2 border-gray-350 rounded-lg">
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold">
+            <a href="https://bootcamp-sl.discover.online.purdue.edu/ai-machine-learning-certification-course?_ga=2.248470919.1816546931.1706543402-1365430790.1706303985" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+              Purdue University
+            </a>
+          </h3>
+          <p class="text-gray-600">Post Graduate Program in AI and Machine Learning</p>
+          <p class="text-gray-500"><em>Oct 2020 - Nov 2021</em></p>
+          <div class="flex justify-start gap-4 mt-4">
+            <a href="javascript:void(0);" onclick="openModal('images/purdue_gl.png')">
+              <img src="images/purdue_gl.png" alt="Image 1 description" class="w-48 h-32 object-cover border-2 border-gray-350 rounded-lg">
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold">
+            <a href="https://www.msrit.edu/department/me.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+              Ramaiah Institute of Technology
+            </a>
+          </h3>
+          <p class="text-gray-600">Bachelor of Engineering in Mechanical Engineering</p>
+          <p class="text-gray-500"><em>Aug 2014 - June 2018</em></p>
+        </div>          
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Certifications -->
+  <section id="certifications" class="mb-12">
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-3xl font-semibold mb-6">Certifications 📜</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Certification Card 1 -->
+        <div class="bg-gray-50 p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center">
+            <!-- Wrap the image with an anchor tag -->
+            <a href="https://www.michaelsutter.com/ediploma?fn=diplomastatuscheck&key=020000007d6e5e48b9f67b8258cbc63d8f541c24a43c9d0dbb90dc754f7c045f1dcd9976e4b70bb0d51c336b6c994e6051bc174fee2b2d685f889067a08feb1f6d7ca818">
+              <img src="images/alml_grad_cert.png" alt="Certificate Image" class="w-16 h-16 mr-4 object-cover rounded shadow">
+            </a>
+            <div>
+              <a href="https://www.michaelsutter.com/ediploma?fn=diplomastatuscheck&key=020000007d6e5e48b9f67b8258cbc63d8f541c24a43c9d0dbb90dc754f7c045f1dcd9976e4b70bb0d51c336b6c994e6051bc174fee2b2d685f889067a08feb1f6d7ca818" class="text-blue-600 font-semibold hover:underline">
+                Graduate Certificate in Applied Machine Learning
+              </a>
+              <p class="text-gray-600">Jun 2024</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Certification Card 2 -->
+        <div class="bg-gray-50 p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center">
+            <a href="https://success.simplilearn.com/3477eb04-5e46-4fab-9c3d-78b185a8a842#gs.h15m3k">
+              <img src="images/purdue_gl.png" alt="Certificate Image" class="w-16 h-16 mr-4 object-cover rounded shadow">
+            </a>
+            <div>
+              <a href="https://success.simplilearn.com/3477eb04-5e46-4fab-9c3d-78b185a8a842#gs.h15m3k" class="text-blue-600 font-semibold hover:underline">
+                Post Graduate Program in AI and Machine Learning
+              </a>
+              <p class="text-gray-600">Oct 2021</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Certification Card 3 -->
+        <div class="bg-gray-50 p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center">
+            <a href="https://www.credly.com/badges/6be88838-1016-4c6a-9eec-f9c508fd6d8c/public_url">
+              <img src="images/aws_cloud.png" alt="AWS Certified Cloud Practitioner" class="w-16 h-16 mr-4 object-cover rounded shadow">
+            </a>
+            <div>
+              <a href="https://www.credly.com/badges/6be88838-1016-4c6a-9eec-f9c508fd6d8c/public_url" class="text-blue-600 font-semibold hover:underline">
+                AWS Certified Cloud Practitioner
+              </a>
+              <p class="text-gray-600">May 2024</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certification Card 4 -->
+        <div class="bg-gray-50 p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center">
+            <a href="https://www.coursera.org/account/accomplishments/verify/YK6BZC2FJCVK">
+              <img src="images/ibm_devops.png" alt="Introduction to DevOps [IBM]" class="w-16 h-16 mr-4 object-cover rounded shadow">
+            </a>
+            <div>
+              <a href="https://www.coursera.org/account/accomplishments/verify/YK6BZC2FJCVK" class="text-blue-600 font-semibold hover:underline">
+                Introduction to DevOps [IBM]
+              </a>
+              <p class="text-gray-600">Jul 2024</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certification Card 5 -->
+        <div class="bg-gray-50 p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center">
+            <a href="https://www.credly.com/badges/878ac772-4cd4-4e17-a627-379ffeb9b47a?source=linked_in_profile">
+              <img src="images/microsoft-certified-azure-fundamentals.png" alt="Microsoft Certified: Azure Fundamentals" class="w-16 h-16 mr-4 object-cover rounded shadow">
+            </a>
+            <div>
+              <a href="https://www.credly.com/badges/878ac772-4cd4-4e17-a627-379ffeb9b47a?source=linked_in_profile" class="text-blue-600 font-semibold hover:underline">
+                Microsoft Certified: Azure Fundamentals
+              </a>
+              <p class="text-gray-600">Jun 2021</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certification Card 6 -->
+        <div class="bg-gray-50 p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center">
+            <a href="https://www.coursera.org/account/accomplishments/verify/YK6BZC2FJCVK">
+              <img src="images/microsoft-certified-azure-data-fundamentals.png" alt="Microsoft Certified: Azure Data Fundamentals" class="w-16 h-16 mr-4 object-cover rounded shadow">
+            </a>
+            <div>
+              <a href="https://www.coursera.org/account/accomplishments/verify/YK6BZC2FJCVK" class="text-blue-600 font-semibold hover:underline">
+                Microsoft Certified: Azure Data Fundamentals
+              </a>
+              <p class="text-gray-600">Jul 2021</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certification Card 7 -->
+        <div class="bg-gray-50 p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center">
+            <a href="https://www.coursera.org/account/accomplishments/verify/YK6BZC2FJCVK">
+              <img src="images/microsoft-certified-azure-ai-fundamentals.png" alt="Microsoft Certified: Azure AI Fundamentals" class="w-16 h-16 mr-4 object-cover rounded shadow">
+            </a>
+            <div>
+              <a href="https://www.coursera.org/account/accomplishments/verify/YK6BZC2FJCVK" class="text-blue-600 font-semibold hover:underline">
+                Microsoft Certified: Azure AI Fundamentals
+              </a>
+              <p class="text-gray-600">Jul 2021</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Add more certification cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ✨ Articles ------------------------------------------------------------ -->
+<section id="articles" class="bg-white p-6 rounded shadow mb-12">
+  <h2 class="text-3xl font-semibold mb-6">Articles 📚</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Card 1 -->
+    <a href="https://medium.com/@inturinikhilnageshwar/beyond-the-words-how-prompt-engineering-and-iterative-refinement-build-exceptional-ai-agents-55e11c4afe26"
+       target="_blank" class="group">
+      <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+        <img src="images/med1.png"
+             alt="Prompt Engineering Cover"
+             class="h-48 w-full object-cover group-hover:scale-105 transform transition-transform duration-300">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold group-hover:text-blue-600">
+            Beyond the Words: How Prompt Engineering … Builds Exceptional AI Agents
+          </h3>
+          <p class="mt-2 text-sm text-gray-600 line-clamp-3">
+            Crafting prompts, agentic workflows, and evaluation loops that turn LLMs from basic responders into powerful research assistants.
+          </p>
+          <span class="mt-3 inline-block text-sm font-medium text-blue-600 group-hover:underline">
+            Read on Medium →
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 2nd Jina embeddings -->
+    <!-- Jina-Embeddings-v4 article card -->
+    <a href="https://medium.com/@inturinikhilnageshwar/jina-embeddings-v4-one-model-to-embed-them-all-f78b8e53b925"
+    target="_blank" class="group">
+    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+    <img src="images/jina_embed.png"
+          alt="Jina v4 Cover"
+          class="h-48 w-full object-cover group-hover:scale-105 transform transition-transform duration-300">
+    <div class="p-4">
+      <h3 class="text-lg font-semibold group-hover:text-blue-600">
+        Jina Embeddings v4: One Model to Embed Them All
+      </h3>
+      <p class="mt-2 text-sm text-gray-600 line-clamp-3">
+        3.8-B param multimodal backbone, 32 K tokens, Matryoshka vectors & state-of-the-art retrieval in 30 languages.
+      </p>
+      <span class="mt-3 inline-block text-sm font-medium text-blue-600 group-hover:underline">
+        Read on Medium →
+      </span>
+    </div>
+    </div>
+    </a>
+
+    <!-- Duplicate <a>…</a> blocks for more articles -->
+  </div>
+</section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow mt-8">
+    <div class="container mx-auto px-4 py-4 text-center">
+      &copy; 2024 Nikhil Nageshwar Inturi
+    </div>
+  </footer>
+
+  <!-- Modal Template -->
+  <div x-data="{ modalOpen: false, modalImage: '' }" x-cloak>
+    <div x-show="modalOpen" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center">
+      <div class="bg-white p-4 rounded shadow-lg relative">
+        <button @click="modalOpen = false" class="absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+        <img :src="modalImage" alt="Certificate Image" class="max-w-full max-h-screen">
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Modal -->
+  <script>
+    document.querySelectorAll('.certificate-image').forEach(img => {
+      img.addEventListener('click', function() {
+        const modal = document.querySelector('[x-data="{ modalOpen: false, modalImage: \'\' }"]');
+        modal.__x.$data.modalImage = this.src;
+        modal.__x.$data.modalOpen = true;
+      });
+    });
+  </script>
+
+  <!-- Smooth Scrolling -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+
+  <div id="imageModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+    <div class="relative bg-white p-4 rounded-lg shadow-lg max-w-3xl w-full">
+      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-xl font-bold">&times;</button>
+      <img id="modalImage" src="" alt="Expanded image" class="w-full h-auto rounded-lg">
+    </div>
+  </div>
+
+  <!-- Place JavaScript code for modal functionality here or in a separate script file -->
+  <script>
+    function openModal(imageSrc) {
+      document.getElementById('modalImage').src = imageSrc;
+      document.getElementById('imageModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').classList.add('hidden');
+    }
+  </script>
+
+  <script>
+    const themeToggle = document.getElementById("theme-toggle");
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      themeToggle.innerText = document.body.classList.contains("dark") ? "🌙" : "🌞";
+    });
+  </script>
+
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: '#4B5563' // gray-600
+        },
+        shape: {
+          type: 'circle'
+        },
+        opacity: {
+          value: 0.5,
+          random: false
+        },
+        size: {
+          value: 3,
+          random: true
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#4B5563',
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: {
+            enable: true,
+            mode: 'grab'
+          },
+          onclick: {
+            enable: true,
+            mode: 'push'
+          },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 140,
+            line_linked: {
+              opacity: 1
+            }
+          },
+          push: {
+            particles_nb: 4
+          }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const card = document.getElementById('flipCard');
+      card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+      });
+    });
+  </script> -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const card = document.getElementById('flipCard');
+
+    // 1) flip-on-click remains
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+
+    // 2) add this to flip immediately on load
+    card.classList.add('flipped');
+  });
+</script>
+
+  <!-- ---------------------------------------------------------------------- -->
+  <!-- Image-Gen, Chatbot & Twitter/X Toggle Button Styles -->
+  <style>
+    /* Shared bubble style */
+    .toggle-btn {
+      position: fixed;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      color: white;
+      font-size: 28px;
+      line-height: 56px;
+      text-align: center;
+      cursor: pointer;
+      z-index: 10000;
+    }
+
+    /* Individual positions */
+    #imagegen-toggle { bottom: 24px; }
+    #chatbot-toggle  { bottom: 96px; }
+    #twitter-toggle  { bottom: 168px; }
+
+    /* Containers */
+    .toggle-container {
+      position: fixed;
+      right: 24px;
+      width: 480px;
+      height: 840px;
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 9999;
+      background-color: #fff;
+    }
+    
+
+    /* Individual container positions */
+    #imagegen-container { bottom: 90px; }
+    #chatbot-container  { bottom: 162px; width: 680px; height: 1100px;}
+    #twitter-container  { bottom: 234px; 
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;}
+  </style>
+
+  <!-- ---------------------------------------------------------------------- -->
+  <!-- Toggle Buttons -->
+  <div id="imagegen-toggle" class="toggle-btn" aria-label="Generate Image">🖼️</div>
+  <div id="chatbot-toggle"  class="toggle-btn" aria-label="Chat">💬</div>
+  <div id="twitter-toggle"  class="toggle-btn" aria-label="Twitter">X</div>
+
+  <!-- ---------------------------------------------------------------------- -->
+  <!-- Containers -->
+  <div id="imagegen-container" class="toggle-container">
+    <!-- image-gen iframe -->
+    <iframe
+      src="https://unikill066-flux-image-generator.hf.space"
+      width="100%" height="100%"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    ></iframe>
+  </div>
+
+  <div id="chatbot-container" class="toggle-container">
+    <!-- chatbot iframe -->
+    <iframe
+      src="https://unikill066-nikhilrag.hf.space?embed=true"
+      width="100%" height="100%"
+      frameborder="0"
+      sandbox="allow-forms allow-scripts allow-same-origin allow-popups"
+      title="NikhilRAG Chatbot"
+    ></iframe>
+  </div>
+
+  <div id="twitter-container" class="toggle-container">
+    <!-- Tweets go here ... -->
+
+
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I just published Jina Embeddings v4: One Model to Embed Them All <a href="https://t.co/xoOaFMQMKp">https://t.co/xoOaFMQMKp</a></p>&mdash; NI IN (@unikill067) <a href="https://twitter.com/unikill067/status/1941965579495080225?ref_src=twsrc%5Etfw">July 6, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">UTD is set to host its inaugural Week of AI, bringing together students, faculty, staff and industry leaders to explore the transformative power of AI. This is aimed at understanding AI’s role in education, research, industry and ethics.<a href="https://t.co/6bBsRhDYfg">https://t.co/6bBsRhDYfg</a></p>&mdash; NI IN (@unikill067) <a href="https://twitter.com/unikill067/status/1941865244365660221?ref_src=twsrc%5Etfw">July 6, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Just finished a course on Multi AI Agent Systems with crewAI, this is insane!Overflowing with ideas to automate my work. I’ve automated bioinformatics pipelines before, but this feels next level. <a href="https://twitter.com/joaomdmoura?ref_src=twsrc%5Etfw">@joaomdmoura</a> <a href="https://twitter.com/DeepLearningAI?ref_src=twsrc%5Etfw">@DeepLearningAI</a> <a href="https://twitter.com/crewAIInc?ref_src=twsrc%5Etfw">@crewAIInc</a> <br>git: <a href="https://t.co/OrQUntamDa">https://t.co/OrQUntamDa</a> <a href="https://t.co/Yav8tLhqlm">pic.twitter.com/Yav8tLhqlm</a></p>&mdash; NI IN (@unikill067) <a href="https://twitter.com/unikill067/status/1916581342415814973?ref_src=twsrc%5Etfw">April 27, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <!-- This script only needs to appear once -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+
+  <!-- ---------------------------------------------------------------------- -->
+  <!-- Toggle Logic Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const imgToggleBtn     = document.getElementById('imagegen-toggle');
+      const chatToggleBtn    = document.getElementById('chatbot-toggle');
+      const twitterToggleBtn = document.getElementById('twitter-toggle');
+
+      const imgContainer     = document.getElementById('imagegen-container');
+      const chatContainer    = document.getElementById('chatbot-container');
+      const twitterContainer = document.getElementById('twitter-container');
+
+      // Sanity check
+      if (!imgToggleBtn || !chatToggleBtn || !twitterToggleBtn || !imgContainer || !chatContainer || !twitterContainer) {
+        console.error('Toggle script: missing an element', {
+          imgToggleBtn, chatToggleBtn, twitterToggleBtn,
+          imgContainer, chatContainer, twitterContainer
+        });
+        return;
+      }
+
+      // Update which toggles are visible based on open panels
+      function updateToggles() {
+        const anyOpen = container => container.style.display === 'block';
+        imgToggleBtn.style.display     = (chatContainer.style.display === 'block' || twitterContainer.style.display === 'block') ? 'none' : 'block';
+        chatToggleBtn.style.display    = (imgContainer.style.display  === 'block' || twitterContainer.style.display === 'block') ? 'none' : 'block';
+        twitterToggleBtn.style.display = (imgContainer.style.display  === 'block' || chatContainer.style.display    === 'block') ? 'none' : 'block';
+      }
+
+      // Generic toggler for two panels
+      function makeToggler(toggleBtn, thisPanel, otherPanel) {
+        toggleBtn.addEventListener('click', () => {
+          otherPanel.style.display = 'none';
+          thisPanel.style.display  = thisPanel.style.display === 'block' ? 'none' : 'block';
+          updateToggles();
+        });
+      }
+
+      // Image-gen <-> Chatbot toggles
+      makeToggler(imgToggleBtn, imgContainer, chatContainer);
+      makeToggler(chatToggleBtn, chatContainer, imgContainer);
+
+      // Twitter <-> Others toggle
+      twitterToggleBtn.addEventListener('click', () => {
+        imgContainer.style.display  = 'none';
+        chatContainer.style.display = 'none';
+        twitterContainer.style.display = twitterContainer.style.display === 'block' ? 'none' : 'block';
+        updateToggles();
+      });
+
+    });
+  </script>
+  <!-- ---------------------------------------------------------------------- -->
+
+</body>
+</html> 

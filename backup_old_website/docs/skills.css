@@ -1,0 +1,53 @@
+/* Dark mode styling */
+body.dark {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+  }
+  
+  body.dark header {
+    background-color: #1e1e1e;
+  }
+  
+  body.dark a {
+    color: #82aaff;
+  }
+  
+  body.dark .bg-white {
+    background-color: #2c2c2c !important;
+  }
+  
+  body.dark .text-gray-600 {
+    color: #b3b3b3 !important;
+  }
+  
+  body.dark .bg-gray-100 {
+    background-color: #333333 !important;
+  }
+  
+  body.dark .bg-gray-300 {
+    background-color: #555555 !important;
+  }
+
+  #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #f3f4f6; /* matches bg-gray-100 */
+    z-index: 0;
+  }
+  
+  /* Make sure your main content stays above particles */
+  header, main, footer {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* in skills.css */
+
+.section-gradient-orange h2 {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-yellow-500;
+}
+
+.section-gradient-pink h2 {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-pink-600;
+}
